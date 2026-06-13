@@ -80,7 +80,8 @@
   --width-room:    1200px;
 }
 
-/* Base reset — typography uses CSS variables only */
+/* ─── Base reset ──────────────────────────────────────────────────────────── */
+
 *,
 *::before,
 *::after {
@@ -99,9 +100,19 @@ html {
 
 body {
   min-height: 100dvh;
+  position: relative;
 }
 
-/* Reduced motion support */
+/* ─── Focus ring ──────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-amber-dusk);
+  outline-offset: var(--space-4);
+  border-radius: var(--radius-xs);
+}
+
+/* ─── Reduced motion support ──────────────────────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -111,4 +122,184 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ─── Museum typography classes ───────────────────────────────────────────── */
+/* Font families: mapped from tokens.                                         */
+/* Font sizes: not defined in SPEC/02_tokens.md. Reported as token gap.       */
+/* Using semantic typographic scale — no inline values in components.         */
+
+.museum-font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.museum-font-label {
+  font-family: var(--font-label), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.museum-font-reading {
+  font-family: var(--font-reading), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.museum-font-note {
+  font-family: var(--font-note), cursive;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ─── Paper texture layer ─────────────────────────────────────────────────── */
+
+.museum-paper-texture {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-paper);
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(28, 24, 16, 0.015) 2px,
+      rgba(28, 24, 16, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(28, 24, 16, 0.01) 3px,
+      rgba(28, 24, 16, 0.01) 6px
+    );
+  mix-blend-mode: multiply;
+}
+
+/* ─── Museum shell ────────────────────────────────────────────────────────── */
+
+.museum-shell {
+  position: relative;
+  z-index: var(--z-base);
+  min-height: 100dvh;
+  background-color: var(--color-parchment);
+}
+
+.museum-shell__content {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* ─── Museum placard ──────────────────────────────────────────────────────── */
+
+.museum-placard {
+  padding: var(--space-16) var(--space-24);
+  background-color: var(--color-bone-white);
+  border: var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-placard);
+}
+
+.museum-placard__title {
+  font-family: var(--font-label), Georgia, serif;
+  font-weight: 700;
+  color: var(--color-deep-ink);
+  margin-bottom: var(--space-4);
+}
+
+.museum-placard__subtitle {
+  font-family: var(--font-reading), Georgia, serif;
+  font-weight: 400;
+  color: var(--color-graphite-whisper);
+  margin-bottom: var(--space-4);
+}
+
+.museum-placard__date {
+  font-family: var(--font-note), cursive;
+  font-weight: 400;
+  color: var(--color-graphite-whisper);
+}
+
+/* ─── Archive stamp ───────────────────────────────────────────────────────── */
+
+.museum-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-48);
+  height: var(--space-48);
+  border-radius: 50%;
+  border: var(--border-medium);
+  background-color: transparent;
+  color: var(--color-graphite-whisper);
+  transition-property: color, border-color;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-paper);
+}
+
+.museum-stamp--interactive {
+  cursor: pointer;
+}
+
+.museum-stamp--interactive:hover,
+.museum-stamp--interactive:focus-visible {
+  color: var(--color-amber-dusk);
+  border-color: var(--color-amber-dusk);
+}
+
+.museum-stamp__label {
+  font-family: var(--font-label), Georgia, serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+/* ─── Photo frame ─────────────────────────────────────────────────────────── */
+
+.museum-frame {
+  position: relative;
+  background-color: var(--color-washed-linen);
+  overflow: hidden;
+}
+
+.museum-frame--studied {
+  border: var(--border-frame);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-frame);
+}
+
+.museum-frame--working {
+  border: var(--border-medium);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-exhibit);
+  transform: rotate(-1deg);
+}
+
+.museum-frame--open {
+  border-top: var(--border-frame);
+  border-left: var(--border-frame);
+  border-right: var(--border-frame);
+  border-bottom: none;
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+  box-shadow: var(--shadow-exhibit);
+}
+
+.museum-frame__image-area {
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-washed-linen);
+  border-bottom: var(--border-light);
+}
+
+.museum-frame__caption {
+  padding: var(--space-12) var(--space-16);
+  font-family: var(--font-reading), Georgia, serif;
+  font-weight: 400;
+  color: var(--color-graphite-whisper);
 }
