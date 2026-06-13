@@ -1,5 +1,3 @@
-# 06_engine.md
-
 # Museum of Mango
 
 Version: 1.1

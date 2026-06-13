@@ -1,5 +1,5 @@
-# 02_tokens.md
-Museum of Mango
+MUSEUM OF MANGO
+
 Version: 1.1
 Status: LOCKED
 

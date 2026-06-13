@@ -1,5 +1,3 @@
-# 05A_viewmodels.md
-
 # Museum of Mango
 
 Version: 1.1

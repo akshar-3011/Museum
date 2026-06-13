@@ -1,5 +1,3 @@
-# 05_components.md
-
 # Museum of Mango
 
 Version: 1.1

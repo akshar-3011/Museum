@@ -1,5 +1,3 @@
-# 04_content.md
-
 # Museum of Mango
 
 Version: 1.1
