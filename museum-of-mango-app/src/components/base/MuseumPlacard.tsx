@@ -23,10 +23,6 @@ export function MuseumPlacard({
   date,
   className,
 }: MuseumPlacardProps) {
-  if (!title && !subtitle && !date) {
-    return null;
-  }
-
   return (
     <aside className={cn("museum-placard", className)} aria-label="Museum placard">
       {title && (
