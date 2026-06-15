@@ -41,7 +41,7 @@ export function ArchiveDrawer({ text, isOpen, className }: ArchiveDrawerProps) {
       aria-hidden={!isOpen}
     >
       {paragraphs.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
+        <p key={index} className="whitespace-pre-line">{paragraph}</p>
       ))}
     </div>
   );

@@ -40,7 +40,7 @@ export function FieldNoteBlock({ text, observed, className }: FieldNoteBlockProp
       aria-hidden={!observed}
     >
       {paragraphs.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
+        <p key={index} className="whitespace-pre-line">{paragraph}</p>
       ))}
     </div>
   );

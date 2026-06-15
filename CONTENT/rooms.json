@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": "identity",
+    "title": "The Girl Behind The Name",
+    "subtitle": "Recovered Name",
+    "theme": "paper",
+    "archiveNumber": "01",
+    "artifacts": [
+      "artifact-001"
+    ],
+    "fieldNotes": [
+      "field.identity.001",
+      "field.identity.002"
+    ],
+    "curatorNotes": [],
+    "ambientAudioId": "paper",
+    "transitionStyle": "fade-dark",
+    "estimatedDuration": 120
+  },
+  {
+    "id": "staying",
+    "title": "Ordinary Familiarity",
+    "subtitle": "Unrehearsed Gesture",
+    "theme": "paper",
+    "archiveNumber": "02",
+    "artifacts": [
+      "artifact-002"
+    ],
+    "fieldNotes": [
+      "field.staying.001",
+      "field.staying.002"
+    ],
+    "curatorNotes": [],
+    "ambientAudioId": "paper",
+    "transitionStyle": "fade-dark",
+    "estimatedDuration": 120
+  }
+]

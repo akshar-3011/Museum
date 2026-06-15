@@ -22,7 +22,7 @@ interface CaptionBlockProps {
 
 export function CaptionBlock({ text, className }: CaptionBlockProps) {
   return (
-    <p className={cn("museum-font-reading", "italic", className)}>
+    <p className={cn("museum-font-reading", "italic", "whitespace-pre-line", className)}>
       {text}
     </p>
   );

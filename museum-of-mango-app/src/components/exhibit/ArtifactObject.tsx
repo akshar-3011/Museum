@@ -111,7 +111,16 @@ export function ArtifactObject({
       className={cn("flex", "flex-col", className)}
       aria-label="Preserved exhibit"
     >
-      <PhotoFrame variant={viewModel.frameVariant} className="w-full" />
+      <PhotoFrame variant={viewModel.frameVariant} className="w-full">
+        {viewModel.asset && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={viewModel.asset}
+            alt={viewModel.title}
+            className="museum-frame__asset"
+          />
+        )}
+      </PhotoFrame>
 
       <CaptionBlock
         text={viewModel.caption}

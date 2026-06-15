@@ -31,8 +31,10 @@ export interface ArtifactVM {
   readonly subtitle: string;
   readonly date: string;
   readonly caption: string;
+  readonly asset: string;
   readonly fieldNote: string;
   readonly drawerText: string;
+  readonly drawerContent?: string;
   readonly frameVariant: FrameVariant;
   readonly rotation: Rotation;
 }
@@ -41,11 +43,21 @@ export interface ArtifactVM {
 const DEMO_DRAWER_TEXT =
   "Preserved for structural verification only.\n\nNo emotional content exists yet.\n\nArchive integrity verified.";
 
+interface CreateOptions {
+  readonly drawerFieldNote?: FieldNote;
+  readonly placardSubtitle?: string;
+  readonly placardDate?: string;
+}
+
 export function createArtifactViewModel(
   artifact: Artifact,
   fieldNote: FieldNote,
+  options?: CreateOptions,
 ): ArtifactVM {
-  const resolved = resolveArtifact(artifact);
+  const resolved = resolveArtifact(artifact, {
+    subtitle: options?.placardSubtitle ?? artifact.subtitle,
+    date: options?.placardDate,
+  });
   const fieldNoteText = resolveFieldNote(fieldNote);
 
   return {
@@ -54,9 +66,14 @@ export function createArtifactViewModel(
     subtitle: resolved.subtitle,
     date: resolved.date,
     caption: resolved.caption,
+    asset: resolved.asset ?? "",
     fieldNote: fieldNoteText,
-    drawerText: DEMO_DRAWER_TEXT,
+    drawerText: options?.drawerFieldNote
+      ? resolveFieldNote(options.drawerFieldNote)
+      : DEMO_DRAWER_TEXT,
+    drawerContent: artifact.drawerContent,
     frameVariant: resolved.frameVariant,
     rotation: resolved.rotation,
   };
 }
+

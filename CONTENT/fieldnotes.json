@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": "field.identity.001",
+    "title": "Observation",
+    "room": "identity",
+    "visibility": "primary",
+    "priority": 1,
+    "createdAt": "2024-01-01",
+    "subject": "Mango",
+    "observation": "I noticed she has two names.\n\nOne is sharper. It walks with more certainty,\nspeaks first, holds its ground.\n\nThe other only appears when she stops holding\neverything together —\nwhen she is silly, or moody, or simply quiet\nwithout needing to explain why.\n\nI did not give her this second name.\nI only said it enough times\nthat she let it stay.",
+    "classification": "observation"
+  },
+  {
+    "id": "field.identity.002",
+    "title": "Archive",
+    "room": "identity",
+    "visibility": "hidden",
+    "priority": 2,
+    "createdAt": "2024-01-01",
+    "subject": "Mango",
+    "observation": "She was upset.\nI called her 'Cheeku' — just to make her smile.\n\nShe refused it immediately.\n'Call me Mango if you want. It's my favourite.'\n\nIt was a joke that stopped being one.",
+    "classification": "archive"
+  },
+  {
+    "id": "field.staying.001",
+    "title": "Observation",
+    "room": "staying",
+    "visibility": "primary",
+    "priority": 1,
+    "createdAt": "2024-01-01",
+    "subject": "Ordinary Familiarity",
+    "observation": "There isn't a story here in the usual sense.\n\nNobody was celebrating anything.\n\nNobody stopped to pose.\n\nShe was moving her hair away from her face,\nand I reached forward because it felt easier than\nwatching her struggle with it.\n\nThe photograph survived.\n\nYears later, I don't remember the conversation,\nthe weather, or what happened next.\n\nI only remember that helping her felt completely normal.",
+    "classification": "observation"
+  },
+  {
+    "id": "field.staying.002",
+    "title": "Archive",
+    "room": "staying",
+    "visibility": "hidden",
+    "priority": 2,
+    "createdAt": "2024-01-01",
+    "subject": "Ordinary Familiarity",
+    "observation": "Nobody asked anyone to take a photograph.\n\nIt happened while something ordinary\nwas already happening.\n\nThat's probably why I still believe it.",
+    "classification": "archive"
+  }
+]
+

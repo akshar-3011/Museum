@@ -28,7 +28,7 @@ export function DrawerPaper({ children, className }: DrawerPaperProps) {
   return (
     <div
       className={cn(
-        "h-[7rem]",
+        "h-[14rem]",
         "overflow-hidden",
         className,
       )}

@@ -72,14 +72,29 @@ const artifactsByRoom: ReadonlyMap<RoomId, readonly ArtifactVM[]> = (() => {
   const map = new Map<RoomId, readonly ArtifactVM[]>();
 
   for (const roomVM of roomVMs) {
+    const room = _rooms.find((r) => r.id === roomVM.id);
+
     const vms = roomVM.artifactIds
       .map((id) => {
         const artifact = _allArtifacts.find((a) => a.id === id);
         if (!artifact) return undefined;
-        const fieldNote =
-          _allFieldNotes.find((fn) => fn.room === artifact.room) ??
-          _allFieldNotes[0];
-        return createArtifactViewModel(artifact, fieldNote);
+
+        // Layer 2: primary field note (visible on Observe)
+        const primaryFieldNote =
+          _allFieldNotes.find(
+            (fn) => fn.room === artifact.room && fn.visibility !== "hidden",
+          ) ?? _allFieldNotes[0];
+
+        // Layer 3: hidden field note (visible in drawer on Open)
+        const drawerFieldNote = _allFieldNotes.find(
+          (fn) => fn.room === artifact.room && fn.visibility === "hidden",
+        );
+
+        return createArtifactViewModel(artifact, primaryFieldNote, {
+          drawerFieldNote,
+          placardSubtitle: room?.subtitle,
+          placardDate: "Preserved",
+        });
       })
       .filter((vm): vm is NonNullable<typeof vm> => vm !== undefined);
 

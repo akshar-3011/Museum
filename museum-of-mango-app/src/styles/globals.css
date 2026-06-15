@@ -297,6 +297,13 @@ body {
   border-bottom: var(--border-light);
 }
 
+.museum-frame__asset {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .museum-frame__caption {
   padding: var(--space-12) var(--space-16);
   font-family: var(--font-reading), Georgia, serif;

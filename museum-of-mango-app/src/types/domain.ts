@@ -108,6 +108,8 @@ export interface Artifact extends BaseEntity {
   readonly frameVariant:        FrameVariant;
   readonly primary?:            string;         // chat artifact: raw emoji/phrase
   readonly preservationReason?: string;         // chat artifact: placard text
+  readonly subtitle?:           string;         // optional placard subtitle override
+  readonly drawerContent?:      string;         // optional plain-text archive drawer content
 }
 
 // ─── 12. Field Note ──────────────────────────────────────────────────────────

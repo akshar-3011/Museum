@@ -27,7 +27,7 @@ export function ObservationPaper({ children, className }: ObservationPaperProps)
   return (
     <div
       className={cn(
-        "h-[5rem]",
+        "h-[26rem]",
         "overflow-hidden",
         className,
       )}

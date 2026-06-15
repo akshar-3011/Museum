@@ -24,17 +24,27 @@ interface ResolvedArtifact {
   readonly subtitle: string;
   readonly date: string;
   readonly caption: string;
+  readonly asset: string;
   readonly frameVariant: FrameVariant;
   readonly rotation: Rotation;
 }
 
-export function resolveArtifact(artifact: Artifact): ResolvedArtifact {
+interface ResolveOptions {
+  readonly subtitle?: string;
+  readonly date?: string;
+}
+
+export function resolveArtifact(
+  artifact: Artifact,
+  options?: ResolveOptions,
+): ResolvedArtifact {
   return {
     id: artifact.id,
     title: artifact.title,
-    subtitle: "Archive Entry",
-    date: artifact.createdAt.slice(0, 4),
+    subtitle: options?.subtitle ?? "Archive Entry",
+    date: options?.date ?? artifact.createdAt.slice(0, 4),
     caption: artifact.caption,
+    asset: artifact.asset,
     frameVariant: artifact.frameVariant,
     rotation: clampRotation(artifact.rotation),
   };
