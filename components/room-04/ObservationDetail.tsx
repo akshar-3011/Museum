@@ -11,7 +11,9 @@ interface ObservationDetailProps {
   onClose: () => void;
 }
 
-export default function ObservationDetail({ observation, onClose }: ObservationDetailProps) {
+import React from "react";
+
+const ObservationDetail = React.memo(function ObservationDetail({ observation, onClose }: ObservationDetailProps) {
   // Lock body scroll while modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -75,7 +77,7 @@ export default function ObservationDetail({ observation, onClose }: ObservationD
             right: "0",
             background: "none",
             border: "none",
-            color: "rgba(244, 240, 232, 0.6)",
+            color: "var(--color-text-secondary)",
             fontSize: "0.8rem",
             letterSpacing: "0.1em",
             cursor: "pointer",
@@ -114,4 +116,6 @@ export default function ObservationDetail({ observation, onClose }: ObservationD
       </motion.div>
     </motion.div>
   );
-}
+});
+
+export default ObservationDetail;

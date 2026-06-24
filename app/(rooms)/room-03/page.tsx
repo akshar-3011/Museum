@@ -107,7 +107,7 @@ export default function Room03Page() {
             className="font-serif-human"
             style={{
               fontSize: "1.1rem",
-              color: "rgba(244, 240, 232, 0.7)",
+              color: "var(--color-text-secondary)",
               lineHeight: 1.6,
             }}
           >

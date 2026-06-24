@@ -97,7 +97,7 @@ export default function SecretCabinet() {
                   top: "1rem",
                   left: "1.5rem",
                   fontSize: "0.6rem",
-                  color: "rgba(244, 240, 232, 0.3)",
+                  color: "var(--color-text-muted)",
                   letterSpacing: "0.2em",
                 }}
               >
@@ -129,11 +129,13 @@ export default function SecretCabinet() {
 }
 
 // Sub-component for individual interactive scraps
-function MicroScrap({ text, rotation, offsetY, delay }: { text: string; rotation: number; offsetY: number; delay: number }) {
+import React from "react";
+const MicroScrap = React.memo(function MicroScrap({ text, rotation, offsetY, delay }: { text: string; rotation: number; offsetY: number; delay: number }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <motion.button
+      className="micro-obs-btn"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.4 }}
@@ -223,4 +225,4 @@ function MicroScrap({ text, rotation, offsetY, delay }: { text: string; rotation
       </motion.div>
     </motion.button>
   );
-}
+});

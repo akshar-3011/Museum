@@ -107,6 +107,7 @@ export default function ArchiveVideoFrame({
                 playsInline
                 loop
                 muted
+                preload="metadata"
                 style={{
                   width: "100%",
                   maxHeight: "75vh", // Added to ensure it doesn't overflow

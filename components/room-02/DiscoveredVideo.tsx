@@ -98,6 +98,7 @@ export default function DiscoveredVideo({ id, src, label, quiet = false, recover
               playsInline
               loop
               muted
+              preload="metadata"
               style={{
                 width: "100%",
                 display: "block",

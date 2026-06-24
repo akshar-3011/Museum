@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import React from "react";
 import { DrawerState } from "@/hooks/useObservationState";
 import { ObservationContent } from "@/lib/rooms/room-04-content";
 
@@ -10,17 +11,15 @@ interface DrawerFrontProps {
   onClick: () => void;
 }
 
-export default function DrawerFront({ observation, state, onClick }: DrawerFrontProps) {
+const DrawerFront = React.memo(function DrawerFront({ observation, state, onClick }: DrawerFrontProps) {
   const isOpened = state === "opened-this-session";
   const isLarge = observation.gridSpan === "large";
   const isMedium = observation.gridSpan === "medium";
 
   return (
-    <motion.button
-      className="drawer-span"
+    <button
+      className="drawer-span drawer-btn"
       onClick={onClick}
-      whileHover={{ translateY: 3 }}
-      whileTap={{ translateY: 6 }}
       aria-label={`Open ${observation.title}`}
       style={{
         // CSS Grid spans mapped directly to the props
@@ -126,6 +125,8 @@ export default function DrawerFront({ observation, state, onClick }: DrawerFront
           boxShadow: isOpened ? "0 2px 4px rgba(0,0,0,0.2)" : "0 4px 6px rgba(0,0,0,0.3)",
         }}
       />
-    </motion.button>
+    </button>
   );
-}
+});
+
+export default DrawerFront;
