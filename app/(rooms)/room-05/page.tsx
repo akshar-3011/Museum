@@ -6,6 +6,7 @@ import { ClosingSequenceProvider, useClosingSequence } from "@/components/room-0
 
 import CaseFile from "@/components/room-05/CaseFile";
 import BraceletObject from "@/components/room-05/BraceletObject";
+import UnclassifiedItem from "@/components/room-05/UnclassifiedItem";
 import RemainTrueStatements from "@/components/room-05/RemainTrueStatements";
 import MissingPage from "@/components/room-05/MissingPage";
 import HiddenArchiveDrawer from "@/components/room-05/HiddenArchiveDrawer";
@@ -87,7 +88,7 @@ function Room05Content() {
               className="font-serif-human"
               style={{
                 fontSize: "1.1rem",
-                color: "rgba(244, 240, 232, 0.7)",
+                color: "var(--color-text-secondary)",
                 lineHeight: 1.6,
               }}
             >
@@ -112,7 +113,10 @@ function Room05Content() {
           </TeardownWrapper>
 
           <TeardownWrapper teardownDelay={1.2}>
-            <BraceletObject />
+            <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
+              <BraceletObject />
+              <UnclassifiedItem />
+            </div>
           </TeardownWrapper>
 
           <TeardownWrapper teardownDelay={0.8}>
@@ -138,7 +142,7 @@ function Room05Content() {
               <span
                 className="font-mono-system"
                 style={{
-                  color: "rgba(244, 240, 232, 0.25)",
+                  color: "var(--color-text-muted)",
                   fontSize: "0.6rem",
                   letterSpacing: "0.25em",
                 }}
@@ -186,7 +190,7 @@ function Room05Content() {
               <span
                 className="font-mono-system"
                 style={{
-                  color: "rgba(244, 240, 232, 0.15)",
+                  color: "var(--color-text-muted)",
                   fontSize: "0.55rem",
                   letterSpacing: "0.18em",
                 }}

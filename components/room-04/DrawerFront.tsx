@@ -80,7 +80,7 @@ export default function DrawerFront({ observation, state, onClick }: DrawerFront
           className="font-serif-human"
           style={{
             fontSize: isLarge ? "1.4rem" : "0.95rem",
-            color: "#1c1a17",
+            color: "#1c1a17", // dark ink on physical cardstock
             fontWeight: isLarge ? 500 : 400,
           }}
         >

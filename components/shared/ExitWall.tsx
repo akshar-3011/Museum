@@ -19,7 +19,7 @@ export default function ExitWall({ tag, title, text, nextRoomLabel, nextRoomUrl 
     <div
       style={{
         paddingTop: "6rem",
-        borderTop: "1px solid rgba(244, 240, 232, 0.1)",
+        borderTop: "1px solid color-mix(in srgb, var(--color-text-primary) 10%, transparent)",
         width: "100%",
         maxWidth: "600px",
         margin: "0 auto",

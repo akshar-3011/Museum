@@ -28,7 +28,7 @@ export default function ThemeToggle() {
   };
 
   if (!mounted) {
-    return null; // Avoid hydration mismatch by not rendering until mounted
+    return <div style={{ width: "44px", height: "44px", position: "fixed", top: "1.5rem", right: "1.5rem", zIndex: 50 }} />; // Hydration placeholder
   }
 
   const isDark = theme === "dark";
@@ -38,6 +38,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label="Toggle Museum Theme"
       title="Toggle Museum Theme"
+      className="font-mono-system"
       style={{
         position: "fixed",
         top: "1.5rem",
@@ -49,39 +50,22 @@ export default function ThemeToggle() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: "44px",
         height: "44px",
-        color: "var(--color-text-secondary)",
-        transition: "color 0.3s ease, transform 0.2s ease",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = "var(--color-text-primary)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = "var(--color-text-secondary)";
+        color: "var(--color-text-primary)",
+        fontSize: "0.65rem",
+        letterSpacing: "0.2em",
+        transition: "transform 0.2s ease",
       }}
       onMouseDown={(e) => {
-        e.currentTarget.style.transform = "scale(0.95)";
+        e.currentTarget.style.transform = "scale(0.98)";
       }}
       onMouseUp={(e) => {
         e.currentTarget.style.transform = "scale(1)";
       }}
     >
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill={isDark ? "currentColor" : "none"}
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      >
-        {/* Abstract museum mark: an archival geometric stamp */}
-        <rect x="3" y="3" width="18" height="18" />
-        <path d="M8 8h8v8H8z" fill={isDark ? "var(--color-bg)" : "currentColor"} stroke="none" />
-        <circle cx="12" cy="12" r="2" fill={isDark ? "currentColor" : "var(--color-bg)"} stroke="none" />
-      </svg>
+      <span style={{ opacity: isDark ? 1 : 0.4, transition: "opacity 0.5s ease" }}>NIGHT</span>
+      <span style={{ margin: "0 0.6rem", opacity: 0.3 }}>|</span>
+      <span style={{ opacity: isDark ? 0.4 : 1, transition: "opacity 0.5s ease" }}>DAY</span>
     </button>
   );
 }

@@ -12,8 +12,10 @@
   --color-cardstock: #e8dcbe;
   --color-mat: #fdfcf9;
   --color-shadow: rgba(0,0,0,0.8);
+  --color-cabinet-frame: #1c1a17;
+  --color-frame-bg: #f5f0e6;
   --grain-opacity: 0.016;
-  --vignette-opacity: 0.9;
+  --vignette-opacity: 0.75;
 
   --font-mono: var(--font-mono), monospace;
   --font-serif: var(--font-serif), Georgia, serif;
@@ -43,6 +45,8 @@
   --color-cardstock: #e8dcbe; /* physical object */
   --color-mat: #fdfcf9; /* physical object */
   --color-shadow: rgba(26, 24, 22, 0.08);
+  --color-cabinet-frame: #dcd8cd;
+  --color-frame-bg: #ece6d8;
   --grain-opacity: 0.025;
   --vignette-opacity: 0.08;
 }
@@ -58,8 +62,6 @@
     box-shadow 500ms ease;
 }
 
-[data-framer-motion],
-.framer-motion-element,
 .vignette-overlay,
 .noise-overlay {
   transition: none !important;

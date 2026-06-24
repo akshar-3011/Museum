@@ -22,7 +22,7 @@ export default function RemainTrueStatements() {
           className="font-serif-human"
           style={{
             fontSize: "1.2rem",
-            color: "#1c1a17",
+            color: "var(--color-text-primary)",
             marginBottom: "1.5rem",
             fontWeight: 400,
           }}

@@ -17,8 +17,8 @@ export default function ExhibitFrame({ id, children, tag }: ExhibitFrameProps) {
       style={{
         transform: `rotate(${token.rotation})`,
         boxShadow: token.shadowDepth,
-        backgroundColor: "#f5f0e6", // warm aged paper
-        color: "#1c1a17", // ink black
+        backgroundColor: "var(--color-frame-bg)",
+        color: "var(--color-text-primary)", // ink black
         padding: HIERARCHY_MODIFIERS.matPadding, // reduced mat border padding
         borderRadius: "2px 3px 2px 4px", // micro-imperfections in paper cut
         position: "relative",

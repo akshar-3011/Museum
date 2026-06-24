@@ -20,7 +20,7 @@ export default function SecretCabinet() {
           maxWidth: "400px",
           minHeight: "var(--touch-target-min, 24px)",
           height: "24px",
-          backgroundColor: "#1a1816", // Dark wood/structural shadow color
+          backgroundColor: "var(--color-cabinet-frame)", // Dark wood/structural shadow color
           border: "none",
           borderTop: "2px solid rgba(255, 255, 255, 0.05)",
           borderBottom: "1px solid rgba(0, 0, 0, 0.5)",

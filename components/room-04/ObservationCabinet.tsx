@@ -36,7 +36,7 @@ export default function ObservationCabinet() {
             width: "100%",
             minWidth: "700px", // Ensures the 3-column grid doesn't crush on desktop
             maxWidth: "900px", // width of the physical cabinet desk
-            backgroundColor: "#1c1a17", // dark wood cabinet frame behind drawers
+            backgroundColor: "var(--color-cabinet-frame)", // dark wood cabinet frame behind drawers
             padding: "12px",
             borderRadius: "4px 4px 0 0", // flat bottom
             boxShadow: "0 20px 50px rgba(0,0,0,0.5), inset 0 2px 5px rgba(255,255,255,0.05)",

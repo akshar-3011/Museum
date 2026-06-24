@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ibmPlexMono.variable} ${fraunces.variable} ${specialElite.variable}`}>
+    <html lang="en" className={`${ibmPlexMono.variable} ${fraunces.variable} ${specialElite.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
