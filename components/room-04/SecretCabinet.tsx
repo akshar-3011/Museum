@@ -97,7 +97,7 @@ export default function SecretCabinet() {
                   top: "1rem",
                   left: "1.5rem",
                   fontSize: "0.6rem",
-                  color: "var(--color-text-muted)",
+                  color: "rgba(244, 240, 232, 0.3)",
                   letterSpacing: "0.2em",
                 }}
               >

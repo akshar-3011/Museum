@@ -157,23 +157,23 @@ export default function BraceletObject() {
               className="font-mono-system"
               style={{
                 backgroundColor: "transparent",
-                border: "1px solid rgba(244, 240, 232, 0.15)",
+                border: "1px solid rgba(28, 26, 23, 0.15)",
                 padding: "0.5rem 1.2rem",
                 fontSize: "0.58rem",
-                color: "rgba(244, 240, 232, 0.35)",
+                color: "rgba(28, 26, 23, 0.35)",
                 cursor: "pointer",
                 letterSpacing: "0.12em",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor =
-                  "rgba(244, 240, 232, 0.3)";
-                e.currentTarget.style.color = "rgba(244, 240, 232, 0.5)";
+                  "rgba(28, 26, 23, 0.3)";
+                e.currentTarget.style.color = "rgba(28, 26, 23, 0.5)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor =
-                  "rgba(244, 240, 232, 0.15)";
-                e.currentTarget.style.color = "rgba(244, 240, 232, 0.35)";
+                  "rgba(28, 26, 23, 0.15)";
+                e.currentTarget.style.color = "rgba(28, 26, 23, 0.35)";
               }}
             >
               [ CURATOR&apos;S NOTE ]
@@ -193,7 +193,7 @@ export default function BraceletObject() {
                 style={{
                   fontSize: "0.85rem",
                   lineHeight: 1.6,
-                  color: "rgba(244, 240, 232, 0.45)",
+                  color: "rgba(28, 26, 23, 0.65)",
                   margin: 0,
                   fontStyle: "italic",
                 }}

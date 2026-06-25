@@ -71,8 +71,7 @@ export default function SlowLineReveal({ lines, baseDelay = 0 }: SlowLineRevealP
             style={{
               marginBottom: "1rem",
               lineHeight: 1.6,
-              fontSize: "1.15rem",
-              color: "var(--color-text-primary)"
+              fontSize: "1.15rem"
             }}
           >
             {line.text}

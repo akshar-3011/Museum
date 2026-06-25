@@ -77,7 +77,7 @@ const ObservationDetail = React.memo(function ObservationDetail({ observation, o
             right: "0",
             background: "none",
             border: "none",
-            color: "var(--color-text-secondary)",
+            color: "rgba(244, 240, 232, 0.6)",
             fontSize: "0.8rem",
             letterSpacing: "0.1em",
             cursor: "pointer",

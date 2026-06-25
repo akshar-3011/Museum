@@ -217,15 +217,15 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
                 style={{
                   background: "none",
                   border: "none",
-                  color: "rgba(244, 240, 232, 0.5)",
+                  color: "var(--color-text-secondary)",
                   fontSize: "0.7rem",
                   letterSpacing: "0.15em",
                   cursor: "pointer",
                   padding: "0.5rem 1rem",
                   transition: "color 0.2s ease",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(244, 240, 232, 0.9)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(244, 240, 232, 0.5)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
               >
                 [CLOSE DRAWER]
               </button>

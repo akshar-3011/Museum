@@ -293,7 +293,6 @@ body {
   font-weight: 300;
   line-height: clamp(1.6, 3vw, 1.75);
   font-size: clamp(15px, 2.5vw, 1.15rem);
-  color: var(--color-text-primary);
 }
 
 /* Focus States for Keyboard Navigation */

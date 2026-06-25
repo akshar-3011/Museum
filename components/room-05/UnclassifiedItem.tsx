@@ -129,7 +129,7 @@ export default function UnclassifiedItem() {
                   className="font-serif-human"
                   style={{
                     fontSize: "1.1rem",
-                    color: "var(--color-text-primary)",
+                    color: "#1c1a17",
                     fontStyle: "italic",
                     margin: 0,
                   }}
