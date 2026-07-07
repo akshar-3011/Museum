@@ -1,21 +1,22 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ExhibitFrame from "@/components/room-01/ExhibitFrame";
 import { HIERARCHY_MODIFIERS } from "@/lib/design/artifact-tokens";
 
 interface DiscoveredVideoProps {
   id: string; // artifact token ID
-  src: string;
+  imagePath: string;
   label: string;
   quiet?: boolean;
   recoveredText?: string;
 }
 
-export default function DiscoveredVideo({ id, src, label, quiet = false, recoveredText }: DiscoveredVideoProps) {
+export default function DiscoveredVideo({ id, imagePath, label, quiet = false, recoveredText }: DiscoveredVideoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isTextRevealed, setIsTextRevealed] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const scale = HIERARCHY_MODIFIERS.photoScaleMultiplier;
@@ -52,12 +53,9 @@ export default function DiscoveredVideo({ id, src, label, quiet = false, recover
         
         {/* The physical print/screen border (Polaroid-style white margin) */}
         <div
-          className="mobile-full-width"
+          className="photo-print-border-tall"
           style={{
-            backgroundColor: "#ffffff",
-            padding: "calc(0.5rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier)) calc(1.6rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier))",
-            boxShadow: "0 3px 10px rgba(0,0,0,calc(0.12 * var(--shadow-multiplier)))",
-            border: "1px solid rgba(0,0,0,0.04)",
+            transform: shouldReduceMotion ? "none" : `rotate(calc(-1.2deg * var(--rotation-multiplier)))`,
             width: "100%",
             maxWidth: `${Math.round((quiet ? 280 : 380) * scale)}px`, // Video might be wider/smaller
             position: "relative",
@@ -94,11 +92,13 @@ export default function DiscoveredVideo({ id, src, label, quiet = false, recover
           >
             <video
               ref={videoRef}
-              src={src}
+              src={imagePath}
+              aria-label={label || "Museum exhibit"}
               playsInline
               loop
               muted
               preload="metadata"
+              poster={imagePath.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
               style={{
                 width: "100%",
                 display: "block",
@@ -133,18 +133,7 @@ export default function DiscoveredVideo({ id, src, label, quiet = false, recover
             }}
           >
             {/* Library sticker physical styling */}
-            <div
-              style={{
-                backgroundColor: "#e3d8be",
-                padding: "0.4rem 0.8rem",
-                boxShadow: "1px 2px 4px rgba(0,0,0,0.2)",
-                border: "1px solid rgba(28, 26, 23, 0.1)",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                borderRadius: "1px",
-              }}
-            >
+            <div className="artifact-sticker">
               <span
                 className="font-mono-system"
                 style={{

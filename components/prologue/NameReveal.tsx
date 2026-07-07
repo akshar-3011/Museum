@@ -26,7 +26,7 @@ export default function NameReveal() {
           opacity: 1,
           scale: 1,
         }}
-        transition={{
+        transition={shouldReduceMotion ? { duration: 0 } : {
           duration: 1.5,
           ease: [0.22, 1, 0.36, 1],
           delay: 0.4, // Screen holds black a beat longer first
@@ -51,7 +51,7 @@ export default function NameReveal() {
         animate={{
           opacity: 0.75,
         }}
-        transition={{
+        transition={shouldReduceMotion ? { duration: 0 } : {
           duration: 1.2,
           ease: [0.22, 1, 0.36, 1],
           delay: 1.2,

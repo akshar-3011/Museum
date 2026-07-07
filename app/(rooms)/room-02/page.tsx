@@ -119,7 +119,7 @@ export default function Room02Page() {
               <section>
                 <FramedPhotoWithTag
                   id="photo-1"
-                  src={ROOM_02_CONTENT.photo01.src}
+                  imagePath={ROOM_02_CONTENT.photo01.imagePath}
                   alt={ROOM_02_CONTENT.photo01.alt}
                   tagText={ROOM_02_CONTENT.photo01.tagText}
                   description={ROOM_02_CONTENT.photo01.description}
@@ -148,7 +148,7 @@ export default function Room02Page() {
               <section>
                 <DiscoveredVideo
                   id="video-1"
-                  src={ROOM_02_CONTENT.video01.src}
+                  imagePath={ROOM_02_CONTENT.video01.imagePath}
                   label={ROOM_02_CONTENT.video01.label}
                 />
               </section>
@@ -157,7 +157,7 @@ export default function Room02Page() {
               <section>
                 <FramedPhotoWithTag
                   id="photo-2"
-                  src={ROOM_02_CONTENT.photo02.src}
+                  imagePath={ROOM_02_CONTENT.photo02.imagePath}
                   alt={ROOM_02_CONTENT.photo02.alt}
                   tagText={ROOM_02_CONTENT.photo02.tagText}
                   tagPosition="bottom-left"
@@ -173,7 +173,7 @@ export default function Room02Page() {
               <section style={{ padding: "6rem 0" }}>
                 <DiscoveredVideo
                   id="video-2"
-                  src={ROOM_02_CONTENT.video02.src}
+                  imagePath={ROOM_02_CONTENT.video02.imagePath}
                   label={ROOM_02_CONTENT.video02.label}
                   quiet
                   recoveredText={`The archive begins here.\n\nThe first time "you" and "I" became "us" in a frame.`}
@@ -184,7 +184,7 @@ export default function Room02Page() {
               <section>
                 <FramedPhotoWithTag
                   id="photo-3"
-                  src={ROOM_02_CONTENT.photo03.src}
+                  imagePath={ROOM_02_CONTENT.photo03.imagePath}
                   alt={ROOM_02_CONTENT.photo03.alt}
                 />
                 <div style={{ marginTop: "8rem" }}>

@@ -65,6 +65,8 @@ const ObservationDetail = React.memo(function ObservationDetail({ observation, o
           margin: "auto", // prevents flexbox cutoff when content is taller than viewport
         }}
         onClick={(e) => e.stopPropagation()} // Prevent clicks inside from closing
+        role="article"
+        tabIndex={0}
       >
         {/* Close Button / Affordance */}
         <button

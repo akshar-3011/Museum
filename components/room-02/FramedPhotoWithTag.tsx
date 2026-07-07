@@ -8,7 +8,7 @@ import { HIERARCHY_MODIFIERS } from "@/lib/design/artifact-tokens";
 
 interface FramedPhotoWithTagProps {
   id: string; // artifact token ID
-  src: string;
+  imagePath: string;
   alt?: string;
   tagText?: string;
   tagPosition?: "bottom-right" | "bottom-left";
@@ -18,7 +18,7 @@ interface FramedPhotoWithTagProps {
 
 export default function FramedPhotoWithTag({
   id,
-  src,
+  imagePath,
   alt = "Museum photograph",
   tagText,
   tagPosition = "bottom-right",
@@ -58,13 +58,11 @@ export default function FramedPhotoWithTag({
         >
           {/* The physical print border (Polaroid-style white margin) */}
           <div
+            className="photo-print-border-tall"
             style={{
-              backgroundColor: "#ffffff",
-              padding: "0.5rem 0.5rem 1.6rem 0.5rem",
-              boxShadow: "0 3px 10px rgba(0,0,0,0.12)",
-              border: "1px solid rgba(0,0,0,0.04)",
+              transform: shouldReduceMotion ? "none" : "rotate(-1deg)",
               width: "100%",
-              maxWidth: `${Math.round(340 * scale)}px`,
+              maxWidth: "480px",
               position: "relative",
               boxSizing: "border-box",
               zIndex: 2, // Sits above the sliding fragment
@@ -98,7 +96,7 @@ export default function FramedPhotoWithTag({
               }}
             >
               <Image
-                src={src}
+                src={imagePath}
                 alt={alt}
                 fill
                 sizes="(max-width: 600px) 100vw, 400px"
@@ -210,18 +208,7 @@ export default function FramedPhotoWithTag({
                 }}
               >
                 {/* Library tab cardstock */}
-                <div
-                  style={{
-                    backgroundColor: "#e3d8be", // library tab cardstock
-                    padding: "0.4rem 0.8rem",
-                    boxShadow: "1px 2px 5px rgba(0,0,0,0.2)",
-                    border: "1px solid rgba(28, 26, 23, 0.15)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    borderRadius: "1px",
-                  }}
-                >
+                <div className="artifact-sticker">
                   {/* Visual staple/attachment */}
                   <div
                     style={{

@@ -52,9 +52,7 @@
 }
 
 /* Theme transitions */
-*,
-*::before,
-*::after {
+.theme-transition {
   transition:
     background-color 500ms ease,
     color 500ms ease,
@@ -277,6 +275,32 @@ body {
     transition-duration: 0s !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Shared Component Styles */
+.artifact-sticker {
+  background-color: #e3d8be;
+  padding: 0.4rem 0.8rem;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+  border: 1px solid rgba(28, 26, 23, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1px;
+}
+
+.photo-print-border {
+  background-color: #ffffff;
+  padding: calc(0.5rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier)) calc(1.6rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier));
+  box-shadow: 0 3px 10px rgba(0, 0, 0, calc(0.12 * var(--shadow-multiplier)));
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.photo-print-border-tall {
+  background-color: #ffffff;
+  padding: calc(0.5rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier)) calc(2.4rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier));
+  box-shadow: 0 3px 10px rgba(0, 0, 0, calc(0.12 * var(--shadow-multiplier)));
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 /* Typography Helpers */

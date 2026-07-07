@@ -16,7 +16,7 @@ export const ROOM_02_CONTENT = {
     lineFour: "unnoticed most days, missing the moment it's gone.",
   },
   photo01: {
-    src: "/image/room-02/room-02_photo-01.jpg",
+    imagePath: "/image/room-02/room-02_photo-01.jpg",
     alt: "First evidence of return",
     tagText: "A photograph taken without permission.\nA memory kept without regret.",
     description: "No one told us this picture was clicked. That's what makes it perfect.\nA moment that wasn't posed, a memory that wasn't planned, and somehow everything we were, in one frame.",
@@ -78,13 +78,13 @@ export const ROOM_02_CONTENT = {
 
   // ── Beat 6: Video Fragment One ──
   video01: {
-    src: "/video/room-02/room-02_video-01.mp4",
+    imagePath: "/video/room-02/room-02_video-01.mp4",
     label: "Footage recovered.",
   },
 
   // ── Beat 7: Photo + Tag-Pull (learned mechanic) ──
   photo02: {
-    src: "/image/room-02/room-02_photo-02.jpg",
+    imagePath: "/image/room-02/room-02_photo-02.jpg",
     alt: "Unremarkable Tuesday, documented",
     tagText: "You called them random photos.\nI saved every one of them.",
   },
@@ -117,13 +117,13 @@ export const ROOM_02_CONTENT = {
 
   // ── Beat 9: Video Fragment Two (quiet) ──
   video02: {
-    src: "/video/room-02/room-02_video-02.mp4",
+    imagePath: "/video/room-02/room-02_video-02.mp4",
     label: "Footage recovered.",
   },
 
   // ── Beat 10: Final photo + Realization ──
   photo03: {
-    src: "/image/room-02/room-02_photo-03.jpg",
+    imagePath: "/image/room-02/room-02_photo-03.jpg",
     alt: "The realization",
   },
   realization: {

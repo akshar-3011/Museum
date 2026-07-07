@@ -7,7 +7,7 @@ export interface ArtifactStyleToken {
   shadowDepth: string; // Softened CSS values for box-shadow
 }
 
-// Global modifiers for the museum hierarchy refinement pass
+// Global modifiers for the threshold/exhibit/observation hierarchy refinement pass
 export const HIERARCHY_MODIFIERS = {
   photoScaleMultiplier: 1.18, // Increase photo dimensions by ~18%
   matPadding: "1.6rem 1.6rem 1.6rem 1.6rem", // Reduced mat border padding
@@ -15,7 +15,7 @@ export const HIERARCHY_MODIFIERS = {
   attachmentScale: 0.8, // Shrink paperclips, stickers, stamps by 20%
 };
 
-// Deterministic design tokens for Room 01 exhibits with reduced weight
+// Deterministic design tokens for Room 01 thresholds, exhibits, and observations
 export const ROOM_01_TOKENS: Record<string, ArtifactStyleToken> = {
   threshold: {
     rotation: "0.5deg",

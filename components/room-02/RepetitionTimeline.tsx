@@ -138,7 +138,7 @@ export default function RepetitionTimeline({ ticks }: RepetitionTimelineProps) {
                           backgroundColor: isRevealed ? "#e3d8be" : "transparent",
                           borderBottom: isRevealed ? "none" : "1px dashed rgba(28, 26, 23, 0.3)",
                           borderRadius: "1px",
-                          transition: "background-color 0.2s ease",
+                          transition: shouldReduceMotion ? "none" : "background-color 0.2s ease",
                         }}
                       >
                         <span

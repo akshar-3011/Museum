@@ -1,6 +1,6 @@
 # Museum of Mango
 
-Status: Planning
+Status: COMPLETED
 
 ---
 
@@ -14,28 +14,26 @@ Status: Planning
 
 ## Content
 
-- [ ] Manifest
-- [ ] Rooms
-- [ ] Artifacts
-- [ ] Poems
-- [ ] Letters
-- [ ] Photos
-- [ ] Videos
+- [x] Manifest
+- [x] Rooms (01-05)
+- [x] Artifacts
+- [x] Poems
+- [x] Letters
+- [x] Photos
+- [x] Videos
 
 ---
 
 ## Application
 
-- [ ] Slice 01
-- [ ] Slice 02
-- [ ] Slice 03
-- [ ] Slice 04
-- [ ] Slice 05
-- [ ] Slice 06
-- [ ] Slice 07
-- [ ] Slice 08
+- [x] Prologue
+- [x] Room 01
+- [x] Room 02
+- [x] Room 03
+- [x] Room 04
+- [x] Room 05
 
 ---
 
 Current Phase:
-Architecture Frozen
+Production/Completed

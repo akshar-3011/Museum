@@ -58,18 +58,13 @@ export default function ArchiveVideoFrame({
           }}
         >
           <div
+            className="photo-print-border"
             style={{
               transform: shouldReduceMotion ? "none" : `rotate(${videoRotation})`,
-              backgroundColor: "#ffffff", // polaroid/photo print border
-              padding: "0.5rem 0.5rem 1.6rem 0.5rem",
-              boxShadow: "0 3px 10px rgba(0,0,0,0.12)",
-              border: "1px solid rgba(0,0,0,0.04)",
               width: "100%",
               // Constrain width by viewport height so the 9:16 video doesn't overflow screen height
               maxWidth: `min(${Math.round(380 * scale)}px, 42vh)`,
               position: "relative",
-              boxSizing: "border-box",
-              transition: "transform 0.4s ease",
             }}
           >
             {/* Record ID label on bottom margin */}
@@ -104,10 +99,12 @@ export default function ArchiveVideoFrame({
               <video
                 ref={videoRef}
                 src={src}
+                aria-label={tag || "Museum exhibit"}
                 playsInline
                 loop
                 muted
                 preload="metadata"
+                poster={src.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
                 style={{
                   width: "100%",
                   maxHeight: "75vh", // Added to ensure it doesn't overflow
@@ -138,18 +135,7 @@ export default function ArchiveVideoFrame({
               }}
             >
               {/* Library sticker physical styling */}
-              <div
-                style={{
-                  backgroundColor: "#e3d8be",
-                  padding: "0.4rem 0.8rem",
-                  boxShadow: "1px 2px 5px rgba(0,0,0,0.2)",
-                  border: "1px solid rgba(28, 26, 23, 0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  borderRadius: "1px",
-                }}
-              >
+              <div className="artifact-sticker">
                 <span
                   className="font-mono-system"
                   style={{

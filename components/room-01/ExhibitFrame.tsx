@@ -101,19 +101,15 @@ function StickerOverlay({ text }: { text?: string }) {
         position: "absolute",
         top: "-12px",
         left: "18px",
-        backgroundColor: "#e3d8be", // darker library tab cardstock
-        padding: "0.3rem 0.8rem",
-        boxShadow: "1px 1.5px 4px rgba(0,0,0,0.1)",
         transform: `rotate(-1.5deg) scale(${scale})`,
         transformOrigin: "top left",
-        border: "1px solid rgba(28, 26, 23, 0.08)",
         fontSize: "0.62rem",
         color: "rgba(28, 26, 23, 0.55)", // quieter sticker text
         zIndex: 5,
         letterSpacing: "0.06em",
         textTransform: "uppercase",
       }}
-      className="font-mono-system"
+      className="font-mono-system artifact-sticker"
     >
       {text ? text.split(" // ")[0] : "ARCHIVE"}
     </div>

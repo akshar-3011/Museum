@@ -21,6 +21,8 @@ const DrawerFront = React.memo(function DrawerFront({ observation, state, onClic
       className="drawer-span drawer-btn"
       onClick={onClick}
       aria-label={`Open ${observation.title}`}
+      role="button"
+      tabIndex={0}
       style={{
         // CSS Grid spans mapped directly to the props
         gridColumn: isLarge ? "span 2" : isMedium ? "span 2" : "span 1",

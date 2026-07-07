@@ -40,6 +40,8 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
           transition={{ duration: 0.6 }}
           onClick={() => setIsOpen(true)}
           aria-label={`Open drawer: ${label}`}
+          role="button"
+          tabIndex={0}
           style={{
             width: "100%",
             background: "none",
@@ -64,7 +66,7 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
               flexDirection: "column",
               alignItems: "center",
               gap: "2rem",
-              transition: "transform 0.2s ease",
+              transition: shouldReduceMotion ? "none" : "transform 0.2s ease",
             }}
           >
             {/* Cardstock Label */}
@@ -213,6 +215,8 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
               <button
                 onClick={() => setIsOpen(false)}
                 aria-label="Close drawer"
+                role="button"
+                tabIndex={0}
                 className="font-mono-system"
                 style={{
                   background: "none",

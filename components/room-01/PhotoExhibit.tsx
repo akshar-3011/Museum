@@ -43,12 +43,9 @@ export default function PhotoExhibit({
             }}
           >
             <div
+              className="photo-print-border"
               style={{
                 transform: shouldReduceMotion ? "none" : `rotate(calc(${photoRotation} * var(--rotation-multiplier)))`,
-                backgroundColor: "#ffffff", // polaroid/photo print border
-                padding: "calc(0.5rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier)) calc(1.6rem * var(--mat-padding-multiplier)) calc(0.5rem * var(--mat-padding-multiplier))", // responsive white border margin
-                boxShadow: "0 3px 10px rgba(0,0,0,calc(0.12 * var(--shadow-multiplier)))", // softer responsive shadow
-                border: "1px solid rgba(0,0,0,0.04)",
                 width: "100%",
                 maxWidth: `${Math.round(340 * scale)}px`, // increased photo width bounds by ~18%
                 position: "relative",
@@ -85,7 +82,7 @@ export default function PhotoExhibit({
               >
                 <Image
                   src={exhibit.imagePath}
-                  alt={exhibit.title}
+                  alt={exhibit.title || "Museum exhibit"}
                   fill
                   sizes="(max-width: 600px) 100vw, 400px"
                   style={{
