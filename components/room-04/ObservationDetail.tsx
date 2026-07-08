@@ -27,7 +27,7 @@ const ObservationDetail = React.memo(function ObservationDetail({ observation, o
     title: observation.title,
     tag: observation.tag,
     copy: observation.copy,
-    imagePath: observation.assetType === "photo" ? observation.assetPath : undefined,
+    imagePath: observation.assetType === "photo" ? observation.imagePath : undefined,
   };
 
   return (
@@ -95,7 +95,7 @@ const ObservationDetail = React.memo(function ObservationDetail({ observation, o
         ) : (
           <ArchiveVideoFrame
             id={observation.id}
-            src={observation.assetPath}
+            src={observation.imagePath}
             tag={observation.tag}
             videoRotation={getArtifactToken(observation.id).rotation}
             extraChildren={

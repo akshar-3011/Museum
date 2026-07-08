@@ -4,7 +4,6 @@ export interface Room03ExhibitContent {
   tag?: string;
   copy: string;
   imagePath?: string;
-  videoPath?: string;
   hiddenText?: string;
   marginNote?: string;
   secretImagePath?: string;
@@ -37,7 +36,7 @@ export const ROOM_03_CONTENT = {
       title: "Media 01 — Baseline Shift",
       tag: "Video Record // Default States",
       copy: "Before, my default state was guarded. Sometime around the fourth month of terrible jokes, the guard dropped.",
-      videoPath: "/video/room-03/room-03_video-01.mp4",
+      imagePath: "/video/room-03/room-03_video-01.mp4",
       secretImagePath: "/image/room-03/room-03_photo-02.jpg", // Tucked behind the video
       hiddenText: "I didn't consciously decide to trust you. I just got too tired of arguing about spelling to keep my walls up.",
     },
@@ -60,7 +59,7 @@ export const ROOM_03_CONTENT = {
       title: "Media 02 — Secondary Evidence",
       tag: "Video Record // Involuntary Reaction",
       copy: "Secondary effects captured indirectly. Someone pointed out I was looking at my phone and smiling at a blank wall.",
-      videoPath: "/video/room-03/room-03_video-02.mp4",
+      imagePath: "/video/room-03/room-03_video-02.mp4",
       secretImagePath: "/image/room-03/room-03_photo-03.png", // Tucked behind the video
       hiddenText: "I lied and said it was a funny video. It was just you typing.",
     },

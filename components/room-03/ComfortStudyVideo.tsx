@@ -40,7 +40,7 @@ export default function ComfortStudyVideo() {
       >
         <ArchiveVideoFrame
           id={content.id}
-          src={content.videoPath!}
+          src={content.imagePath!}
           tag={content.tag}
           videoRotation={getArtifactToken(content.id).rotation}
           extraChildren={
