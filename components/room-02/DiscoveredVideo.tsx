@@ -93,13 +93,12 @@ export default function DiscoveredVideo({ id, imagePath, label, quiet = false, r
           >
             <video
               ref={videoRef}
-              src={imagePath}
+              src={`${imagePath}#t=0.001`}
               aria-label={label || "Museum exhibit"}
               playsInline
               loop
               muted
               preload="metadata"
-              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3Crect width='100%25' height='100%25' fill='%2322201d'/%3E%3C/svg%3E"
               style={{
                 width: "100%",
                 display: "block",

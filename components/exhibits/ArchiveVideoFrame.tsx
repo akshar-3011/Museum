@@ -89,13 +89,12 @@ export default function ArchiveVideoFrame({
             >
               <video
                 ref={videoRef}
-                src={src}
+                src={`${src}#t=0.001`}
                 aria-label={tag || "Museum exhibit"}
                 playsInline
                 loop
                 muted
                 preload="metadata"
-                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3Crect width='100%25' height='100%25' fill='%2322201d'/%3E%3C/svg%3E"
                 style={{
                   width: "100%",
                   maxHeight: "75vh", // Added to ensure it doesn't overflow
