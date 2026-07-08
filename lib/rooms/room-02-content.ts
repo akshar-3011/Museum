@@ -138,8 +138,8 @@ export const ROOM_02_CONTENT = {
   exitWall: {
     tag: "END OF ROOM 02",
     title: "No grand moment was ever found.",
-    text: "The archive remained full.",
-    nextRoomLabel: "OPEN ROOM 03",
+    text: "There wasn't a single day where everything changed.\nIt was just a hundred ordinary Tuesdays,\nand then one day I realized the baseline had permanently shifted.",
+    nextRoomLabel: "Proceed to Room 03",
     nextRoomUrl: "/room-03",
   },
 };

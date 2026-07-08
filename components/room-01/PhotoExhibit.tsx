@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ExhibitFrame from "./ExhibitFrame";
 import { ExhibitContent } from "@/lib/room-01/content";
 import { HIERARCHY_MODIFIERS } from "@/lib/design/artifact-tokens";
@@ -18,6 +19,7 @@ export default function PhotoExhibit({
   extraChildren,
 }: PhotoExhibitProps) {
   const shouldReduceMotion = useReducedMotion();
+  const [hasError, setHasError] = useState(false);
   const scale = HIERARCHY_MODIFIERS.photoScaleMultiplier;
 
   return (
@@ -87,9 +89,26 @@ export default function PhotoExhibit({
                   sizes="(max-width: 600px) 100vw, 400px"
                   style={{
                     objectFit: "cover",
+                    opacity: hasError ? 0 : 1,
+                    transition: "opacity 0.3s",
                   }}
                   priority={exhibit.id === "exhibit1"} // Load hero photo immediately
+                  onError={() => setHasError(true)}
                 />
+                {hasError && (
+                  <div style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "rgba(28, 26, 23, 0.4)",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.15em",
+                  }} className="font-mono-system">
+                    [ RECORD MISSING ]
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -99,6 +99,7 @@ export default function CaseFile() {
               fontSize: "0.95rem",
               lineHeight: 1.6,
               color: "rgba(28, 26, 23, 0.8)",
+              whiteSpace: "pre-line",
             }}
           >
             {content.copy}

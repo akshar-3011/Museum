@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -12,6 +13,7 @@ export interface ExitWallProps {
 }
 
 export default function ExitWall({ tag, title, text, nextRoomLabel, nextRoomUrl }: ExitWallProps) {
+  const [isNavigating, setIsNavigating] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const lines = text.split("\n");
 
@@ -118,8 +120,9 @@ export default function ExitWall({ tag, title, text, nextRoomLabel, nextRoomUrl 
             e.currentTarget.style.color = "var(--color-accent)";
             e.currentTarget.style.borderColor = "rgba(217, 160, 91, 0.3)";
           }}
+          onClick={() => setIsNavigating(true)}
         >
-          {nextRoomLabel}
+          {isNavigating ? "PROCEEDING..." : nextRoomLabel}
         </Link>
       </motion.div>
     </div>

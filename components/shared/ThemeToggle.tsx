@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -12,6 +11,7 @@ export default function ThemeToggle() {
     // Read the current theme from the document root on mount
     const current = document.documentElement.getAttribute("data-theme") as "dark" | "light" | null;
     if (current === "light" || current === "dark") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(current);
     }
     setMounted(true);
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
     document.documentElement.setAttribute("data-theme", newTheme);
     try {
       localStorage.setItem("museum-theme", newTheme);
-    } catch (e) {
+    } catch {
       // Ignore localStorage errors
     }
   };

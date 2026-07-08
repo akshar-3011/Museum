@@ -25,7 +25,7 @@ export default function Room04Page() {
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: shouldReduceMotion ? 0.1 : 1.5, ease: "easeOut" }}
+        transition={{ duration: shouldReduceMotion ? 0.1 : 1.5, delay: shouldReduceMotion ? 0 : 0.8, ease: "easeOut" }}
         style={{
           width: "100%",
           maxWidth: "1000px",

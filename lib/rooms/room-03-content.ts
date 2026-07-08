@@ -56,7 +56,7 @@ export const ROOM_03_CONTENT = {
       marginNote: "That's the part I still can't explain. Nothing about you was attached to these moments. Yet somehow, you stayed attached to all of them.",
     },
     secondaryEvidence: {
-      id: "exhibit6",
+      id: "exhibit1",
       title: "Media 02 — Secondary Evidence",
       tag: "Video Record // Involuntary Smiling",
       copy: "Secondary effects captured indirectly. The observer's reaction to the subject, recorded as proof of impact. The baseline state is permanently elevated.",

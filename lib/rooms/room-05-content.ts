@@ -6,20 +6,20 @@ export const ROOM_05_CONTENT = {
   },
   exhibits: {
     caseFile: {
-      id: "exhibit-01",
+      id: "exhibit1",
       tag: "Archive Status // Open",
       title: "Everything Explained Except One Thing",
       copy: "The photos have dates. The messages have timestamps. The memories have context.\nThe feeling somehow arrived without documentation.",
     },
     bracelet: {
-      id: "exhibit-02",
+      id: "exhibit2",
       tag: "Artifact // 01 // Unfiled",
       title: "Retained Without Classification",
       description: "The object itself proved insignificant. The reason it was kept did not.",
       hiddenContext: "The object was ordinary. The attachment was not.",
     },
     statements: {
-      id: "exhibit-03",
+      id: "exhibit3",
       tag: "Conclusions // Verified",
       title: "Things That Remain True",
       items: [
@@ -29,7 +29,7 @@ export const ROOM_05_CONTENT = {
       ],
     },
     missingPage: {
-      id: "exhibit-04",
+      id: "exhibit4",
       tag: "Log // Unwritten",
       title: "The Blank Page",
       copy: "The archive only contains what has already happened. The rest of the space is left deliberately empty. It is not a missing record; it is room for what comes next.",

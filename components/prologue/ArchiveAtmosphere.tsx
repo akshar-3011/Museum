@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function ArchiveAtmosphere() {
   const [isPaused, setIsPaused] = useState(false);
@@ -16,6 +15,7 @@ export default function ArchiveAtmosphere() {
   useEffect(() => {
     // Initial check
     const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(currentTheme);
 
     // Observer for changes

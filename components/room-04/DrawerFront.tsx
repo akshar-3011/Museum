@@ -49,7 +49,7 @@ const DrawerFront = React.memo(function DrawerFront({ observation, state, onClic
         transition: "opacity 0.4s ease, box-shadow 0.2s ease",
         height: "100%", // Fill grid cell
         width: "100%",
-        outline: "none",
+
       }}
     >
       {/* Cardstock Label Holder */}
@@ -64,8 +64,26 @@ const DrawerFront = React.memo(function DrawerFront({ observation, state, onClic
           flexDirection: "column",
           alignItems: "center",
           position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Thumbprint artifact (revisit mark) */}
+        {isOpened && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "10%",
+              right: "5%",
+              width: "25px",
+              height: "35px",
+              borderRadius: "50%",
+              background: "radial-gradient(ellipse at center, rgba(142, 138, 130, 0.15) 0%, rgba(142, 138, 130, 0) 70%)",
+              border: "1px dashed rgba(142, 138, 130, 0.1)",
+              transform: "rotate(-15deg)",
+              pointerEvents: "none",
+            }}
+          />
+        )}
         <span
           className="font-mono-system"
           style={{

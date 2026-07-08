@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import PhotoExhibit from "@/components/room-01/PhotoExhibit";
 import ArchiveVideoFrame from "@/components/exhibits/ArchiveVideoFrame";
@@ -11,7 +11,6 @@ interface ObservationDetailProps {
   onClose: () => void;
 }
 
-import React from "react";
 
 const ObservationDetail = React.memo(function ObservationDetail({ observation, onClose }: ObservationDetailProps) {
   // Lock body scroll while modal is open

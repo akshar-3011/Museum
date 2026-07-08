@@ -15,6 +15,7 @@ export default function MarginNoteTrigger({
   isRightSide = true,
 }: MarginNoteTriggerProps) {
   const [isRevealed, setIsRevealed] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -22,6 +23,8 @@ export default function MarginNoteTrigger({
       {/* The highlighted text trigger */}
       <button
         onClick={() => setIsRevealed(!isRevealed)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         aria-expanded={isRevealed}
         aria-label={`View margin note for ${highlightedText}`}
         style={{
@@ -47,7 +50,7 @@ export default function MarginNoteTrigger({
             left: "-2px",
             right: "-2px",
             height: "6px",
-            backgroundColor: isRevealed ? "rgba(217, 160, 91, 0.4)" : "rgba(217, 160, 91, 0.2)", // Mango accent
+            backgroundColor: isRevealed ? "rgba(217, 160, 91, 0.4)" : isHovered ? "rgba(217, 160, 91, 0.3)" : "rgba(217, 160, 91, 0.2)", // Mango accent
             transform: "rotate(-1deg)",
             zIndex: 0,
             transition: "background-color 0.2s ease",

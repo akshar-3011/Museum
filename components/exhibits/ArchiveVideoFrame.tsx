@@ -21,6 +21,7 @@ export default function ArchiveVideoFrame({
   extraChildren,
 }: ArchiveVideoFrameProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const scale = HIERARCHY_MODIFIERS.photoScaleMultiplier;
@@ -88,6 +89,7 @@ export default function ArchiveVideoFrame({
               style={{
                 position: "relative",
                 width: "100%",
+                aspectRatio: "9 / 16",
                 backgroundColor: "#0a0a0a", // deep screen black
                 overflow: "hidden",
                 border: "1px solid rgba(0,0,0,0.2)",
@@ -113,12 +115,28 @@ export default function ArchiveVideoFrame({
                   display: "block",
                   backgroundColor: "#22201d", // Dark archival placeholder matching the screen off state
                   opacity: 0.85, // physical screen look, not glowing
-                  filter: "contrast(1.05) brightness(0.95)",
-                }}
-                onPause={() => setIsPlaying(false)}
-                onPlay={() => setIsPlaying(true)}
-              />
-            </div>
+                filter: "contrast(1.05) brightness(0.95)",
+              }}
+              onPause={() => setIsPlaying(false)}
+              onPlay={() => setIsPlaying(true)}
+              onError={() => setHasError(true)}
+            />
+            {hasError && (
+              <div style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "rgba(255, 255, 255, 0.3)",
+                fontSize: "0.6rem",
+                letterSpacing: "0.15em",
+                zIndex: 5,
+              }} className="font-mono-system">
+                [ TAPE CORRUPTED ]
+              </div>
+            )}
+          </div>
 
             {/* The Physical Sticker Overlay Play Affordance */}
             <button

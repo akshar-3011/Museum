@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { ROOM_05_CONTENT } from "@/lib/rooms/room-05-content";
 import { ClosingSequenceProvider, useClosingSequence } from "@/components/room-05/ClosingSequence";
 
@@ -48,7 +48,7 @@ function Room05Content() {
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: shouldReduceMotion ? 0.1 : 1.5, ease: "easeOut" }}
+        transition={{ duration: shouldReduceMotion ? 0.1 : 1.5, delay: shouldReduceMotion ? 0 : 0.8, ease: "easeOut" }}
         style={{
           width: "100%",
           maxWidth: "800px", // sparser room, smaller max-width
@@ -134,72 +134,106 @@ function Room05Content() {
         </div>
 
         {/* ── The Close Archive Action ── */}
-        <TeardownWrapper teardownDelay={0}>
-          <div style={{ marginTop: "16rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}>
-            
-            {/* Pre-button status label — appears before interaction */}
-            {!isClosing && (
-              <span
+        <div style={{ marginTop: "16rem", position: "relative", width: "100%", display: "flex", justifyContent: "center" }}>
+          <TeardownWrapper teardownDelay={0}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}>
+              
+              {/* Pre-button status label — appears before interaction */}
+              {!isClosing && (
+                <span
+                  className="font-mono-system"
+                  style={{
+                    color: "var(--color-text-muted)",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.25em",
+                  }}
+                >
+                  ARCHIVE STATUS // OPEN
+                </span>
+              )}
+
+              {/* The ceremonial close button — modeled on the ink stamp motif */}
+              {!isClosing && (
+                <button
+                  onClick={initiateClosing}
+                  className="font-mono-system"
+                  style={{
+                    backgroundColor: "transparent",
+                    border: "2px solid rgba(171, 60, 45, 0.55)",
+                    padding: "1.1rem 3.5rem",
+                    color: "rgba(171, 60, 45, 0.85)",
+                    fontSize: "0.78rem",
+                    letterSpacing: "0.22em",
+                    cursor: "pointer",
+                    transition: "all 0.5s ease",
+                    position: "relative",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "rgba(171, 60, 45, 0.06)";
+                    e.currentTarget.style.borderColor = "rgba(171, 60, 45, 0.85)";
+                    e.currentTarget.style.color = "#ab3c2d";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.borderColor = "rgba(171, 60, 45, 0.55)";
+                    e.currentTarget.style.color = "rgba(171, 60, 45, 0.85)";
+                  }}
+                >
+                  CLOSE ARCHIVE
+                </button>
+              )}
+
+              {/* Post-interaction status — appears after the seal is pressed */}
+              {!isClosing && (
+                <span
+                  className="font-mono-system"
+                  style={{
+                    color: "var(--color-text-muted)",
+                    fontSize: "0.55rem",
+                    letterSpacing: "0.18em",
+                  }}
+                >
+                  THIS ACTION CANNOT BE UNDONE
+                </span>
+              )}
+            </div>
+          </TeardownWrapper>
+
+          {/* The Ceremonial Stamp (Appears on Close) */}
+          <AnimatePresence>
+            {isClosing && (
+              <motion.div
+                initial={{ scale: 2, opacity: 0, rotate: -5 }}
+                animate={{ scale: 1, opacity: [0, 0.85, 0.85, 0], rotate: -12 }}
+                transition={{ 
+                  scale: { type: "spring", damping: 14, stiffness: 200 },
+                  opacity: { duration: 3.5, times: [0, 0.1, 0.7, 1], ease: "easeInOut" }
+                }}
                 className="font-mono-system"
                 style={{
-                  color: "var(--color-text-muted)",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.25em",
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  x: "-50%",
+                  y: "-50%",
+                  border: "4px solid #ab3c2d",
+                  color: "#ab3c2d",
+                  padding: "1rem 2.5rem",
+                  fontSize: "2.5rem",
+                  fontWeight: "bold",
+                  letterSpacing: "0.2em",
+                  pointerEvents: "none",
+                  zIndex: 50,
+                  boxShadow: "0 0 20px rgba(171, 60, 45, 0.2)",
+                  textShadow: "0 0 10px rgba(171, 60, 45, 0.3)",
+                  transformOrigin: "center center",
                 }}
               >
-                ARCHIVE STATUS // OPEN
-              </span>
+                SEALED
+              </motion.div>
             )}
-
-            {/* The ceremonial close button — modeled on the ink stamp motif */}
-            <button
-              onClick={initiateClosing}
-              disabled={isClosing}
-              className="font-mono-system"
-              style={{
-                backgroundColor: "transparent",
-                border: isClosing ? "2px solid rgba(171, 60, 45, 0.3)" : "2px solid rgba(171, 60, 45, 0.55)",
-                padding: "1.1rem 3.5rem",
-                color: isClosing ? "rgba(171, 60, 45, 0.3)" : "rgba(171, 60, 45, 0.85)",
-                fontSize: "0.78rem",
-                letterSpacing: "0.22em",
-                cursor: isClosing ? "default" : "pointer",
-                transition: "all 0.5s ease",
-                position: "relative",
-              }}
-              onMouseEnter={(e) => {
-                if (!isClosing) {
-                  e.currentTarget.style.backgroundColor = "rgba(171, 60, 45, 0.06)";
-                  e.currentTarget.style.borderColor = "rgba(171, 60, 45, 0.85)";
-                  e.currentTarget.style.color = "#ab3c2d";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isClosing) {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.borderColor = "rgba(171, 60, 45, 0.55)";
-                  e.currentTarget.style.color = "rgba(171, 60, 45, 0.85)";
-                }
-              }}
-            >
-              {isClosing ? "ARCHIVE CLOSING" : "CLOSE ARCHIVE"}
-            </button>
-
-            {/* Post-interaction status — appears after the seal is pressed */}
-            {!isClosing && (
-              <span
-                className="font-mono-system"
-                style={{
-                  color: "var(--color-text-muted)",
-                  fontSize: "0.55rem",
-                  letterSpacing: "0.18em",
-                }}
-              >
-                THIS ACTION CANNOT BE UNDONE
-              </span>
-            )}
-          </div>
-        </TeardownWrapper>
+          </AnimatePresence>
+        </div>
       </motion.main>
     </div>
   );

@@ -10,6 +10,7 @@ interface HiddenNoteTriggerProps {
 
 export default function HiddenNoteTrigger({ hiddenText, children }: HiddenNoteTriggerProps) {
   const [isRevealed, setIsRevealed] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div style={{ position: "relative", width: "100%" }}>
@@ -29,6 +30,8 @@ export default function HiddenNoteTrigger({ hiddenText, children }: HiddenNoteTr
       >
         <button
           onClick={() => setIsRevealed(!isRevealed)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           aria-expanded={isRevealed}
           aria-label="Fold back corner to reveal hidden note"
           style={{
@@ -39,13 +42,13 @@ export default function HiddenNoteTrigger({ hiddenText, children }: HiddenNoteTr
             position: "relative",
             width: "60px",
             height: "60px",
-            outline: "none",
+
           }}
         >
           {/* The folded paper corner visual */}
           <motion.div
             animate={{
-              borderWidth: isRevealed ? "0 40px 40px 0" : "0 25px 25px 0",
+              borderWidth: isRevealed ? "0 40px 40px 0" : isHovered ? "0 28px 28px 0" : "0 25px 25px 0",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             style={{

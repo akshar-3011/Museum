@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ROOM_04_CONTENT } from "@/lib/rooms/room-04-content";
 
@@ -130,7 +130,6 @@ export default function SecretCabinet() {
 }
 
 // Sub-component for individual interactive scraps
-import React from "react";
 const MicroScrap = React.memo(function MicroScrap({ text, rotation, offsetY, delay }: { text: string; rotation: number; offsetY: number; delay: number }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -151,7 +150,7 @@ const MicroScrap = React.memo(function MicroScrap({ text, rotation, offsetY, del
         transform: `translateY(${offsetY}px) rotate(${rotation}deg)`,
         transformStyle: "preserve-3d",
         perspective: "1000px",
-        outline: "none",
+
       }}
     >
       <motion.div

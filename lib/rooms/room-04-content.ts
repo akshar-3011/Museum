@@ -16,7 +16,7 @@ export const ROOM_04_CONTENT = {
   },
   observations: [
     {
-      id: "obs-01",
+      id: "exhibit1",
       title: "The First Thing I Checked",
       tag: "Attention Log // 01",
       copy: "The habit of looking for her name, message, or presence without realizing it.",
@@ -25,7 +25,7 @@ export const ROOM_04_CONTENT = {
       gridSpan: "small", // 1x1
     },
     {
-      id: "obs-02",
+      id: "exhibit2",
       title: "The Way We Fell Into Routine",
       tag: "Attention Log // 02",
       copy: "The unspoken rhythm of daily conversations and familiar check-ins.",
@@ -34,7 +34,7 @@ export const ROOM_04_CONTENT = {
       gridSpan: "medium", // 2x1
     },
     {
-      id: "obs-03",
+      id: "exhibit3",
       title: "Moments I Kept Looking At",
       tag: "Attention Log // 03",
       copy: "Small moments that somehow held my attention longer than they should have.",
@@ -43,16 +43,16 @@ export const ROOM_04_CONTENT = {
       gridSpan: "small",
     },
     {
-      id: "obs-04",
+      id: "exhibit4",
       title: "Things Only I Seemed to Notice",
       tag: "Attention Log // 04",
-      copy: "The only brown I'm in love with is yours.",
+      copy: "A specific shade of brown that permanently recalibrated my visual baseline.",
       assetType: "video",
       assetPath: "/video/room-04/room-04_video-02.mp4",
       gridSpan: "medium",
     },
     {
-      id: "obs-05",
+      id: "exhibit5",
       title: "Where She Felt Familiar",
       tag: "Attention Log // 05",
       copy: "The comfort of her presence without needing a reason for it.",
@@ -61,7 +61,7 @@ export const ROOM_04_CONTENT = {
       gridSpan: "small",
     },
     {
-      id: "obs-06",
+      id: "exhibit1", // Reusing token
       title: "The Mango Effect",
       tag: "Attention Log // 06 // PRIMARY",
       copy: "The collection of all the small things that quietly changed everything.",
@@ -76,9 +76,9 @@ export const ROOM_04_CONTENT = {
       "The name was Vidhi. The version that stayed was Mango.",
       "You probably forgot half the things you said. I accidentally archived them.",
       "I know exactly which messages I never deleted.",
-      "Every playlist eventually had one song meant for her.",
+      "Every playlist eventually developed an anomalous track tied to one subject.",
       "I kept noticing things because she kept mattering.",
-      "There was never a day I decided to care. Then suddenly it had been years.",
+      "There was never a day I decided to pay attention. Then suddenly it had been years.",
     ],
   },
   exitWall: {

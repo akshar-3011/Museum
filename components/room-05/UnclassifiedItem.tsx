@@ -84,7 +84,7 @@ export default function UnclassifiedItem() {
               transform: "rotate(6deg)",
               cursor: "pointer",
               textAlign: "left",
-              outline: "none",
+
             }}
           >
             <div

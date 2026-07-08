@@ -118,7 +118,7 @@ export default function Room02Page() {
               {/* ── Beat 2 (cont): Photo 01 with tag-pull ── */}
               <section>
                 <FramedPhotoWithTag
-                  id="photo-1"
+                  id="exhibit1"
                   imagePath={ROOM_02_CONTENT.photo01.imagePath}
                   alt={ROOM_02_CONTENT.photo01.alt}
                   tagText={ROOM_02_CONTENT.photo01.tagText}
@@ -138,7 +138,7 @@ export default function Room02Page() {
               {/* ── Beat 5: Foldable Document ── */}
               <section style={{ padding: "2rem 0" }}>
                 <FoldableDocument
-                  id="doc-1"
+                  id="exhibit3"
                   title={ROOM_02_CONTENT.accumulationLog.title}
                   entries={ROOM_02_CONTENT.accumulationLog.entries}
                 />
@@ -147,7 +147,7 @@ export default function Room02Page() {
               {/* ── Beat 6: Video Fragment One ── */}
               <section>
                 <DiscoveredVideo
-                  id="video-1"
+                  id="exhibit2"
                   imagePath={ROOM_02_CONTENT.video01.imagePath}
                   label={ROOM_02_CONTENT.video01.label}
                 />
@@ -156,7 +156,7 @@ export default function Room02Page() {
               {/* ── Beat 7: Photo 02 with tag-pull (learned mechanic) ── */}
               <section>
                 <FramedPhotoWithTag
-                  id="photo-2"
+                  id="exhibit3"
                   imagePath={ROOM_02_CONTENT.photo02.imagePath}
                   alt={ROOM_02_CONTENT.photo02.alt}
                   tagText={ROOM_02_CONTENT.photo02.tagText}
@@ -172,7 +172,7 @@ export default function Room02Page() {
               {/* ── Beat 9: Quiet Video ── */}
               <section style={{ padding: "6rem 0" }}>
                 <DiscoveredVideo
-                  id="video-2"
+                  id="exhibit4"
                   imagePath={ROOM_02_CONTENT.video02.imagePath}
                   label={ROOM_02_CONTENT.video02.label}
                   quiet
@@ -183,7 +183,7 @@ export default function Room02Page() {
               {/* ── Beat 10: Final Photo (no tag — earns stillness) + Realization ── */}
               <section>
                 <FramedPhotoWithTag
-                  id="photo-3"
+                  id="exhibit5"
                   imagePath={ROOM_02_CONTENT.photo03.imagePath}
                   alt={ROOM_02_CONTENT.photo03.alt}
                 />

@@ -9,6 +9,7 @@ interface ArchiveButtonProps {
 
 export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
   const [idle, setIdle] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -45,7 +46,10 @@ export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
       }}
     >
       <button
-        onClick={onClick}
+        onClick={() => {
+          setIsNavigating(true);
+          onClick();
+        }}
         className="font-mono-system"
         style={{
           background: "none",
@@ -69,7 +73,7 @@ export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
           e.currentTarget.style.opacity = "1";
         }}
       >
-        OPEN ARCHIVE
+        {isNavigating ? "ACCESSING..." : "OPEN ARCHIVE"}
       </button>
     </motion.div>
   );

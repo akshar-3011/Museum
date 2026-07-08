@@ -9,10 +9,10 @@ export interface ArtifactStyleToken {
 
 // Global modifiers for the threshold/exhibit/observation hierarchy refinement pass
 export const HIERARCHY_MODIFIERS = {
-  photoScaleMultiplier: 1.18, // Increase photo dimensions by ~18%
-  matPadding: "1.6rem 1.6rem 1.6rem 1.6rem", // Reduced mat border padding
-  labelFontSize: "0.62rem", // Smaller system tags
-  attachmentScale: 0.8, // Shrink paperclips, stickers, stamps by 20%
+  photoScaleMultiplier: 1.18, // Primary photo dimensions multiplier
+  matPadding: "1.6rem 1.6rem 1.6rem 1.6rem", // Standard archival mat border padding
+  labelFontSize: "0.62rem", // Standard system tag font size
+  attachmentScale: 0.8, // Standard attachment scale (paperclips, stickers, stamps)
 };
 
 // Deterministic design tokens for Room 01 thresholds, exhibits, and observations

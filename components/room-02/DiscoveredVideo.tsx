@@ -84,6 +84,7 @@ export default function DiscoveredVideo({ id, imagePath, label, quiet = false, r
             style={{
               position: "relative",
               width: "100%",
+              aspectRatio: "9 / 16",
               backgroundColor: "#111", // darker screen background
               overflow: "hidden",
               border: "1px solid rgba(0,0,0,0.2)",
@@ -246,6 +247,7 @@ function TypewrittenPanel({ text }: { text: string }) {
     timer = setTimeout(typeChar, 400);
 
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]); // re-run if text changes
 
   return (

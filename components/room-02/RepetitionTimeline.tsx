@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
+import { HIERARCHY_MODIFIERS } from "@/lib/design/artifact-tokens";
 
 interface TimelineTick {
   label: string;
@@ -144,7 +145,7 @@ export default function RepetitionTimeline({ ticks }: RepetitionTimelineProps) {
                         <span
                           className="font-mono-system"
                           style={{
-                            fontSize: "0.7rem",
+                            fontSize: HIERARCHY_MODIFIERS.labelFontSize,
                             color: "#1c1a17",
                             fontWeight: isRevealed ? 600 : 400,
                           }}
@@ -156,7 +157,7 @@ export default function RepetitionTimeline({ ticks }: RepetitionTimelineProps) {
                       <span
                         className="font-mono-system"
                         style={{
-                          fontSize: "0.7rem",
+                          fontSize: HIERARCHY_MODIFIERS.labelFontSize,
                           color: "rgba(28, 26, 23, 0.5)",
                           padding: "2px 4px",
                         }}

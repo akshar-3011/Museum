@@ -69,7 +69,7 @@ export const EXHIBITS: Record<string, ExhibitContent> = {
 export const EXIT_WALL = {
   tag: "END OF ROOM 01",
   title: "The Foundation is Set.",
-  text: "The name was just the beginning. The actual memories lie ahead in Room 02.",
+  text: "A name is just a placeholder until time fills it with weight.\nThe accumulation begins in Room 02.",
   nextRoomLabel: "Proceed to Room 02",
   nextRoomUrl: "/room-02",
 };
