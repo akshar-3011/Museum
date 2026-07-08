@@ -61,7 +61,7 @@ export const ROOM_04_CONTENT = {
       gridSpan: "small",
     },
     {
-      id: "exhibit1", // Reusing token
+      id: "exhibit6",
       title: "The Cumulative Effect",
       tag: "Attention Log // 06 // PRIMARY",
       copy: "The weight of a hundred small observations that eventually outweighed the rest of the world.",

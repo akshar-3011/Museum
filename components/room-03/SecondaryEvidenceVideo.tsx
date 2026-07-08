@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import ArchiveVideoFrame from "@/components/exhibits/ArchiveVideoFrame";
 import PhotoExhibit from "@/components/room-01/PhotoExhibit";
 import { ROOM_03_CONTENT } from "@/lib/rooms/room-03-content";
+import { getArtifactToken } from "@/lib/design/artifact-tokens";
 
 export default function SecondaryEvidenceVideo() {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -41,7 +42,7 @@ export default function SecondaryEvidenceVideo() {
           id={content.id}
           src={content.videoPath!}
           tag={content.tag}
-          videoRotation="0.8deg"
+          videoRotation={getArtifactToken(content.id).rotation}
         />
 
         {/* Folded folder tab sticking out from behind the video frame */}
@@ -115,7 +116,7 @@ export default function SecondaryEvidenceVideo() {
             copy: content.hiddenText!,
             imagePath: content.secretImagePath!,
           }}
-          photoRotation="-2.2deg"
+          photoRotation={getArtifactToken("secret-03-2").rotation}
         />
       </motion.div>
     </div>

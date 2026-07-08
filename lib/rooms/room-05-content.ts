@@ -39,7 +39,7 @@ export const ROOM_05_CONTENT = {
     label: "MISSED ITEMS",
     fragments: [
       { id: "missed-1", text: "The exact moment Vidhi became Mango. (Date never recorded.)" },
-      { id: "missed-2", text: "The first time, I checked my phone hoping it was her. (Archived too late.)" },
+      { id: "missed-2", text: "The first time I checked my phone hoping it was her. (Archived too late.)" },
       { id: "missed-3", text: "The moment she became part of the way I see things. (Recorded everywhere except where it started.)" },
     ],
   },

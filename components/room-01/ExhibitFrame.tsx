@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useReducedMotion } from "framer-motion";
 import { getArtifactToken, HIERARCHY_MODIFIERS } from "@/lib/design/artifact-tokens";
 
 interface ExhibitFrameProps {
@@ -11,11 +12,12 @@ interface ExhibitFrameProps {
 
 export default function ExhibitFrame({ id, children, tag }: ExhibitFrameProps) {
   const token = getArtifactToken(id);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div
       style={{
-        transform: `rotate(${token.rotation})`,
+        transform: shouldReduceMotion ? "none" : `rotate(calc(${token.rotation} * var(--rotation-multiplier)))`,
         boxShadow: token.shadowDepth,
         backgroundColor: "var(--color-frame-bg)",
         color: "#1c1a17", // ink black

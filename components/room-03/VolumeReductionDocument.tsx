@@ -3,6 +3,7 @@
 import PhotoExhibit from "@/components/room-01/PhotoExhibit";
 import MarginNoteTrigger from "@/components/exhibits/MarginNoteTrigger";
 import { ROOM_03_CONTENT } from "@/lib/rooms/room-03-content";
+import { getArtifactToken } from "@/lib/design/artifact-tokens";
 
 export default function VolumeReductionDocument() {
   const content = ROOM_03_CONTENT.exhibits.volumeReduction;
@@ -18,6 +19,7 @@ export default function VolumeReductionDocument() {
   return (
     <PhotoExhibit
       exhibit={exhibitContent}
+      photoRotation={getArtifactToken(content.id).rotation}
       extraChildren={
         <div style={{ padding: "0.2rem" }}>
           <div

@@ -141,6 +141,7 @@ const MicroScrap = React.memo(function MicroScrap({ text, rotation, offsetY, del
       transition={{ delay, duration: 0.4 }}
       onClick={() => setIsFlipped(!isFlipped)}
       aria-label="Read unfiled fragment"
+      aria-expanded={isFlipped}
       style={{
         background: "none",
         border: "none",

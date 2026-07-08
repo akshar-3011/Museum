@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import PhotoExhibit from "@/components/room-01/PhotoExhibit";
 import ArchiveVideoFrame from "@/components/exhibits/ArchiveVideoFrame";
 import { ObservationContent } from "@/lib/rooms/room-04-content";
+import { getArtifactToken } from "@/lib/design/artifact-tokens";
 
 interface ObservationDetailProps {
   observation: ObservationContent;
@@ -90,13 +91,13 @@ const ObservationDetail = React.memo(function ObservationDetail({ observation, o
 
         {/* The actual exhibit composition */}
         {observation.assetType === "photo" ? (
-          <PhotoExhibit exhibit={exhibitContent} photoRotation="0.5deg" />
+          <PhotoExhibit exhibit={exhibitContent} photoRotation={getArtifactToken(observation.id).rotation} />
         ) : (
           <ArchiveVideoFrame
             id={observation.id}
             src={observation.assetPath}
             tag={observation.tag}
-            videoRotation="0.5deg"
+            videoRotation={getArtifactToken(observation.id).rotation}
             extraChildren={
               <div style={{ padding: "0.2rem" }}>
                 <p

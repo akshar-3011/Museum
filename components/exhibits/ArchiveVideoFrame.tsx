@@ -61,7 +61,7 @@ export default function ArchiveVideoFrame({
           <div
             className="photo-print-border"
             style={{
-              transform: shouldReduceMotion ? "none" : `rotate(${videoRotation})`,
+              transform: shouldReduceMotion ? "none" : `rotate(calc(${videoRotation} * var(--rotation-multiplier)))`,
               width: "100%",
               // Constrain width by viewport height so the 9:16 video doesn't overflow screen height
               maxWidth: `min(${Math.round(380 * scale)}px, 42vh)`,
@@ -106,8 +106,7 @@ export default function ArchiveVideoFrame({
                 loop
                 muted
                 preload="metadata"
-                // The poster images do not physically exist in the public folder, so we rely on background color
-                // poster={src.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3Crect width='100%25' height='100%25' fill='%2322201d'/%3E%3C/svg%3E"
                 style={{
                   width: "100%",
                   maxHeight: "75vh", // Added to ensure it doesn't overflow

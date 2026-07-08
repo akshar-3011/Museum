@@ -265,6 +265,9 @@ body {
 
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
+  :root {
+    --rotation-multiplier: 0 !important;
+  }
   .noise-overlay {
     animation: none !important;
     opacity: calc(var(--grain-opacity) * 0.5);

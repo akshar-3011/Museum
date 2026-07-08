@@ -40,6 +40,7 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
           transition={{ duration: 0.6 }}
           onClick={() => setIsOpen(true)}
           aria-label={`Open drawer: ${label}`}
+          aria-expanded={isOpen}
           role="button"
           tabIndex={0}
           style={{
@@ -155,6 +156,7 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
                     }}
                     onClick={() => setFocusedIndex(isFocused ? null : idx)}
                     role="button"
+                    aria-expanded={isFocused}
                     tabIndex={0}
                     aria-label={text}
                     onKeyDown={(e) => {

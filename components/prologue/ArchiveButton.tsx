@@ -8,8 +8,8 @@ interface ArchiveButtonProps {
 }
 
 export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
-  const [idle, setIdle] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
+  const [idle, setIdle] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -29,12 +29,8 @@ export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={idle && !shouldReduceMotion ? { opacity: [1, 0.6, 1] } : { opacity: 1 }}
-      transition={
-        idle && !shouldReduceMotion
-          ? { duration: 4, ease: "easeInOut", repeat: Infinity }
-          : { duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }
-      }
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
       onMouseMove={resetIdle}
       style={{
         display: "flex",
@@ -45,7 +41,9 @@ export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
         marginBottom: "4rem",
       }}
     >
-      <button
+      <motion.button
+        animate={idle && !shouldReduceMotion ? { filter: ["brightness(1)", "brightness(1.4)", "brightness(1)"] } : { filter: "brightness(1)" }}
+        transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
         onClick={() => {
           setIsNavigating(true);
           onClick();
@@ -67,6 +65,7 @@ export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
         onMouseEnter={(e) => {
           e.currentTarget.style.borderBottomColor = "var(--color-accent)";
           e.currentTarget.style.opacity = "0.8";
+          resetIdle();
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.borderBottomColor = "color-mix(in srgb, var(--color-accent) 20%, transparent)";
@@ -74,7 +73,7 @@ export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
         }}
       >
         {isNavigating ? "ACCESSING..." : "OPEN ARCHIVE"}
-      </button>
+      </motion.button>
     </motion.div>
   );
 }

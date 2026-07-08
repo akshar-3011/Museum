@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import ArchiveVideoFrame from "@/components/exhibits/ArchiveVideoFrame";
 import PhotoExhibit from "@/components/room-01/PhotoExhibit";
 import { ROOM_03_CONTENT } from "@/lib/rooms/room-03-content";
+import { getArtifactToken } from "@/lib/design/artifact-tokens";
 
 export default function ComfortStudyVideo() {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -41,7 +42,7 @@ export default function ComfortStudyVideo() {
           id={content.id}
           src={content.videoPath!}
           tag={content.tag}
-          videoRotation="1.5deg"
+          videoRotation={getArtifactToken(content.id).rotation}
           extraChildren={
             <div style={{ padding: "0.2rem" }}>
               <p
@@ -130,7 +131,7 @@ export default function ComfortStudyVideo() {
             copy: content.hiddenText!,
             imagePath: content.secretImagePath!,
           }}
-          photoRotation="-2.2deg"
+          photoRotation={getArtifactToken("secret-03-1").rotation}
         />
       </motion.div>
     </div>

@@ -99,8 +99,7 @@ export default function DiscoveredVideo({ id, imagePath, label, quiet = false, r
               loop
               muted
               preload="metadata"
-              // The poster images do not physically exist in the public folder, so we rely on background color
-              // poster={imagePath.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
+              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3Crect width='100%25' height='100%25' fill='%2322201d'/%3E%3C/svg%3E"
               style={{
                 width: "100%",
                 display: "block",

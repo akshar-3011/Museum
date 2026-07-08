@@ -72,6 +72,8 @@ export default function UnclassifiedItem() {
           {/* The Conservation Tag */}
           <button
             onClick={() => setIsRevealed(!isRevealed)}
+            aria-expanded={isRevealed}
+            aria-label="Toggle conservation tag details"
             style={{
               position: "absolute",
               bottom: "40px",
