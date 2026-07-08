@@ -19,7 +19,7 @@ export const ROOM_04_CONTENT = {
       id: "exhibit1",
       title: "The First Thing I Checked",
       tag: "Attention Log // 01",
-      copy: "The reflex to check if you had seen it yet, before I even put my phone down.",
+      copy: "The habit of preemptively closing a tab because I knew you'd complain about the font.",
       assetType: "photo",
       assetPath: "/image/room-04/room-04_photo-01.jpg",
       gridSpan: "small", // 1x1
@@ -37,7 +37,7 @@ export const ROOM_04_CONTENT = {
       id: "exhibit3",
       title: "Moments I Kept Looking At",
       tag: "Attention Log // 03",
-      copy: "The specific voice notes that I didn't delete, even when I ran out of storage.",
+      copy: "The exact length of the pause you take before admitting you were wrong.",
       assetType: "photo",
       assetPath: "/image/room-04/room-04_photo-02.jpg",
       gridSpan: "small",
@@ -55,7 +55,7 @@ export const ROOM_04_CONTENT = {
       id: "exhibit5",
       title: "Where She Felt Familiar",
       tag: "Attention Log // 05",
-      copy: "The realization that silence on a call didn't mean someone had to speak.",
+      copy: "The realization that I could predict exactly which line in the movie would make you pause the video.",
       assetType: "photo",
       assetPath: "/image/room-04/room-04_photo-03.jpg",
       gridSpan: "small",
@@ -73,7 +73,7 @@ export const ROOM_04_CONTENT = {
   secretCabinet: {
     label: "UNFILED FRAGMENTS",
     microObservations: [
-      "The name was Vidhi. The version that stayed was Mango.",
+      "You never actually answered half the questions I asked, you just sent a related meme.",
       "You probably forgot half the things you said. I accidentally archived them.",
       "I know exactly which messages I never deleted.",
       "Every playlist eventually got hijacked by a song you recommended.",
