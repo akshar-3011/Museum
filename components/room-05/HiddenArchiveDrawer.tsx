@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ROOM_05_CONTENT } from "@/lib/rooms/room-05-content";
 
 export default function HiddenArchiveDrawer() {
   const { label, fragments } = ROOM_05_CONTENT.hiddenArchive;
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div
@@ -41,12 +42,12 @@ export default function HiddenArchiveDrawer() {
         {fragments.map((fragment, idx) => (
           <motion.div
             key={fragment.id}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-5%" }}
             transition={{
-              duration: 0.9,
-              delay: idx * 0.35,
+              duration: shouldReduceMotion ? 0.1 : 0.9,
+              delay: shouldReduceMotion ? 0 : idx * 0.35,
               ease: [0.22, 1, 0.36, 1],
             }}
             style={{

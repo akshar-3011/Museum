@@ -104,12 +104,14 @@ export default function ArchiveVideoFrame({
                 loop
                 muted
                 preload="metadata"
-                poster={src.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
+                // The poster images do not physically exist in the public folder, so we rely on background color
+                // poster={src.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
                 style={{
                   width: "100%",
                   maxHeight: "75vh", // Added to ensure it doesn't overflow
                   objectFit: "contain",
                   display: "block",
+                  backgroundColor: "#22201d", // Dark archival placeholder matching the screen off state
                   opacity: 0.85, // physical screen look, not glowing
                   filter: "contrast(1.05) brightness(0.95)",
                 }}

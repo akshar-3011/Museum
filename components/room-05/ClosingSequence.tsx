@@ -22,6 +22,12 @@ export function ClosingSequenceProvider({ children }: { children: React.ReactNod
   const [isClosing, setIsClosing] = useState(false);
   const [showFinalScreen, setShowFinalScreen] = useState(false);
 
+  useEffect(() => {
+    if (isClosing) {
+      window.dispatchEvent(new CustomEvent("set-theme-toggle-visible", { detail: false }));
+    }
+  }, [isClosing]);
+
   const initiateClosing = () => {
     setIsClosing(true);
   };

@@ -98,11 +98,13 @@ export default function DiscoveredVideo({ id, imagePath, label, quiet = false, r
               loop
               muted
               preload="metadata"
-              poster={imagePath.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
+              // The poster images do not physically exist in the public folder, so we rely on background color
+              // poster={imagePath.replace(".mp4", "-poster.jpg").replace("/video/", "/image/")}
               style={{
                 width: "100%",
                 display: "block",
                 objectFit: "cover",
+                backgroundColor: "#22201d", // Dark archival placeholder
                 opacity: quiet && !isPlaying ? 0.6 : 1, // quiet video sits darker until played
                 transition: "opacity 0.4s ease",
               }}

@@ -19,6 +19,14 @@ export default function PrologueContainer() {
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Hide the theme toggle during prologue
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent("set-theme-toggle-visible", { detail: false }));
+    return () => {
+      window.dispatchEvent(new CustomEvent("set-theme-toggle-visible", { detail: true }));
+    };
+  }, []);
+
   // Initialize the sequencer hook with completion transition to Room 01
   const { beat, skipIntro, openArchive, showSkip } = usePrologueSequencer({
     onComplete: () => {

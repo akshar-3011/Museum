@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [isVisible, setIsVisible] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -14,6 +15,14 @@ export default function ThemeToggle() {
       setTheme(current);
     }
     setMounted(true);
+
+    const handleVisibility = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      setIsVisible(customEvent.detail);
+    };
+
+    window.addEventListener("set-theme-toggle-visible", handleVisibility);
+    return () => window.removeEventListener("set-theme-toggle-visible", handleVisibility);
   }, []);
 
   const toggleTheme = () => {
@@ -28,7 +37,7 @@ export default function ThemeToggle() {
   };
 
   if (!mounted) {
-    return <div style={{ width: "44px", height: "44px", position: "fixed", top: "1.5rem", right: "1.5rem", zIndex: 50 }} />; // Hydration placeholder
+    return <div style={{ width: "80px", height: "30px", position: "fixed", top: "1.5rem", right: "1.5rem", zIndex: 50 }} />; // Hydration placeholder
   }
 
   const isDark = theme === "dark";
@@ -44,17 +53,22 @@ export default function ThemeToggle() {
         top: "1.5rem",
         right: "1.5rem",
         zIndex: 50,
-        background: "none",
-        border: "none",
+        background: "var(--color-bg)",
+        border: "1px solid color-mix(in srgb, var(--color-accent) 20%, transparent)",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        borderRadius: "1px",
+        padding: "0.2rem 0.6rem",
         cursor: "pointer",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "44px",
+        height: "auto",
         color: "var(--color-text-primary)",
-        fontSize: "0.65rem",
-        letterSpacing: "0.2em",
-        transition: "transform 0.2s ease",
+        fontSize: "0.62rem",
+        letterSpacing: "0.15em",
+        transition: "transform 0.2s ease, opacity 0.8s ease, pointer-events 0.8s ease",
+        opacity: isVisible ? 1 : 0,
+        pointerEvents: isVisible ? "auto" : "none",
       }}
       onMouseDown={(e) => {
         e.currentTarget.style.transform = "scale(0.98)";

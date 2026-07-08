@@ -1,17 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface ArchiveButtonProps {
   onClick: () => void;
 }
 
 export default function ArchiveButton({ onClick }: ArchiveButtonProps) {
+  const [idle, setIdle] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const resetIdle = () => {
+    setIdle(false);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setIdle(true), 5000);
+  };
+
+  useEffect(() => {
+    timerRef.current = setTimeout(() => setIdle(true), 5000);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      animate={idle && !shouldReduceMotion ? { opacity: [1, 0.6, 1] } : { opacity: 1 }}
+      transition={
+        idle && !shouldReduceMotion
+          ? { duration: 4, ease: "easeInOut", repeat: Infinity }
+          : { duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }
+      }
+      onMouseMove={resetIdle}
       style={{
         display: "flex",
         justifyContent: "center",

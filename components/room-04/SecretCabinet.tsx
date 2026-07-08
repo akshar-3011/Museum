@@ -12,6 +12,7 @@ export default function SecretCabinet() {
     <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
       {/* The false-bottom slat */}
       <button
+        className="drawer-btn"
         onClick={() => setIsUnlocked(!isUnlocked)}
         aria-label="Investigate cabinet base"
         aria-expanded={isUnlocked}

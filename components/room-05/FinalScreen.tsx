@@ -9,7 +9,7 @@ export default function FinalScreen() {
       style={{
         position: "fixed",
         inset: 0,
-        backgroundColor: "#050505", // absolute dark
+        backgroundColor: "var(--color-bg)", // Theme-aware background
         zIndex: 9999,
         display: "flex",
         alignItems: "center",
@@ -24,7 +24,7 @@ export default function FinalScreen() {
         transition={{ duration: 4, ease: "easeInOut", delay: 1 }}
         className="font-serif-human"
         style={{
-          color: "rgba(244, 240, 232, 0.9)",
+          color: "var(--color-text-primary)",
           fontSize: "clamp(1rem, 4vw, 1.4rem)",
           letterSpacing: "0.05em",
           textAlign: "center",
@@ -43,7 +43,7 @@ export default function FinalScreen() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
-          opacity: [0, 0, 0.04, 0.018, 0],
+          opacity: [0, 0, 0.10, 0.05, 0],
         }}
         transition={{
           duration: 12,

@@ -78,7 +78,7 @@
   :root {
     --container-width: 92vw;
     --container-padding: 12px;
-    --rotation-multiplier: 0;
+    --rotation-multiplier: 0.4;
     --shadow-multiplier: 0.6;
     --mat-padding-multiplier: 0.7;
     --touch-target-min: 44px;
