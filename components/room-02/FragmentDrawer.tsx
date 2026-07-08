@@ -72,12 +72,12 @@ export default function FragmentDrawer({ label, fragments }: FragmentDrawerProps
           >
             {/* Cardstock Label */}
             <div
+              className="drawer-front-shadow"
               style={{
                 backgroundColor: "#e3d8be",
                 padding: "0.5rem 1.5rem",
                 border: "2px solid #8e8a82",
                 borderRadius: "2px",
-                boxShadow: "inset 0 1px 3px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1)",
               }}
             >
               <span

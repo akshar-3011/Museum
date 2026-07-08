@@ -69,18 +69,7 @@ export default function ArchiveVideoFrame({
             }}
           >
             {/* Record ID label on bottom margin */}
-            <div
-              className="font-mono-system"
-              style={{
-                position: "absolute",
-                bottom: "4px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                fontSize: HIERARCHY_MODIFIERS.labelFontSize,
-                color: "rgba(0,0,0,0.35)",
-                letterSpacing: "0.04em",
-              }}
-            >
+            <div className="font-mono-system print-label-text">
               {id.toUpperCase()}-MEDIA
             </div>
 

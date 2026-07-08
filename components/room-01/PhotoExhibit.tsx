@@ -56,32 +56,12 @@ export default function PhotoExhibit({
               }}
             >
               {/* Adhered label code on the print bottom margin */}
-              <div
-                className="font-mono-system"
-                style={{
-                  position: "absolute",
-                  bottom: "4px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  fontSize: HIERARCHY_MODIFIERS.labelFontSize, // smaller tag
-                  color: "rgba(0,0,0,0.35)", // quieter label opacity
-                  letterSpacing: "0.04em",
-                }}
-              >
+              <div className="font-mono-system print-label-text">
                 {exhibit.id.toUpperCase()}-RECORD
               </div>
 
               {/* Image box */}
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "0",
-                  paddingBottom: "110%", // photographic ratio
-                  overflow: "hidden",
-                  backgroundColor: "#ebeae6",
-                }}
-              >
+              <div className="photo-aspect-container">
                 <Image
                   src={exhibit.imagePath}
                   alt={exhibit.title || "Museum exhibit"}

@@ -69,12 +69,12 @@ export default function DrawerThreshold({ roomTag, drawerLabel, onOpen }: Drawer
           >
             {/* Index card label holder */}
             <div
+              className="drawer-front-shadow"
               style={{
                 backgroundColor: "#e3d8be", // library tab cardstock
                 padding: "1rem 2rem",
                 border: "2px solid #8e8a82", // brass/metal frame
                 borderRadius: "2px",
-                boxShadow: "inset 0 1px 3px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

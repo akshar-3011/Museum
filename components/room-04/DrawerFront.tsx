@@ -54,12 +54,12 @@ const DrawerFront = React.memo(function DrawerFront({ observation, state, onClic
     >
       {/* Cardstock Label Holder */}
       <div
+        className="drawer-front-shadow"
         style={{
           backgroundColor: "#e3d8be",
           padding: isLarge ? "0.8rem 2.5rem" : "0.5rem 1.2rem",
           border: "2px solid #8e8a82",
           borderRadius: "2px",
-          boxShadow: "inset 0 1px 3px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

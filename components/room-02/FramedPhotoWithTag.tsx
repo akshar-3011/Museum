@@ -69,32 +69,12 @@ export default function FramedPhotoWithTag({
             }}
           >
             {/* Adhered label code on the print bottom margin */}
-            <div
-              className="font-mono-system"
-              style={{
-                position: "absolute",
-                bottom: "4px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                fontSize: HIERARCHY_MODIFIERS.labelFontSize,
-                color: "rgba(0,0,0,0.35)",
-                letterSpacing: "0.04em",
-              }}
-            >
+            <div className="font-mono-system print-label-text">
               {id.toUpperCase()}-RECORD
             </div>
 
             {/* The image itself */}
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "0",
-                paddingBottom: "110%",
-                backgroundColor: "#ebeae6",
-                overflow: "hidden",
-              }}
-            >
+            <div className="photo-aspect-container">
               <Image
                 src={imagePath}
                 alt={alt}
