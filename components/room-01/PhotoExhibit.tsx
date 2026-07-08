@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import ExhibitFrame from "./ExhibitFrame";
 import { ExhibitContent } from "@/lib/room-01/content";
 import { HIERARCHY_MODIFIERS } from "@/lib/design/artifact-tokens";

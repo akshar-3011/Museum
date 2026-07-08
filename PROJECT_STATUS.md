@@ -32,6 +32,20 @@ Status: COMPLETED
 - [x] Room 03
 - [x] Room 04
 - [x] Room 05
+- [x] Epilogue
+
+---
+
+## Technical Polish
+- [x] Phase 01: Technical Audit
+- [x] Phase 02: Experience Polish
+- [x] Phase 03: Storytelling
+- [x] Phase 04: Museum Consistency
+- [x] Phase 05: Visitor Journey
+- [x] Phase 06: Visual Design
+- [x] Phase 07: UX Refinement
+- [x] Phase 08: Storytelling Review
+- [x] Phase 09: Production Readiness
 
 ---
 

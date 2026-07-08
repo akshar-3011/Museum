@@ -5,16 +5,19 @@ This interactive museum contains 5 total rooms featuring memories, photos, lette
 
 ## Getting Started
 
-First, run the development server:
+To run locally in development mode:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To build for production:
+
+```bash
+npm run build
+npm run start
+```
+
+## Status
+The project is complete and ready for production deployment. All features, storytelling elements, and museum rooms have been finalized. The app is optimized for production.

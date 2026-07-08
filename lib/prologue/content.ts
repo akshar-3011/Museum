@@ -28,8 +28,8 @@ export const BEAT_4_CONFESSIONS = [
   { text: "Because every time I thought I was done,", delay: 6000 },
   { text: "I noticed something else.", delay: 7400 }, // 1400ms delay as requested
   { text: "The way you stayed.", delay: 8400 },
-  { text: "The way you laughed.", delay: 9400 },
-  { text: "The way ordinary things started meaning something.", delay: 10400 },
+  { text: "The way you argued about nothing.", delay: 9400 },
+  { text: "The way Tuesday afternoons suddenly mattered.", delay: 10400 },
   { text: "The version of you that never made it onto the page.", delay: 11400 },
 ];
 

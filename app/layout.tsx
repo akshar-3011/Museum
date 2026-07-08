@@ -25,8 +25,18 @@ const specialElite = Special_Elite({
 });
 
 export const metadata: Metadata = {
-  title: "Museum of Mango",
-  description: "An archival collection of things too small to keep anywhere else.",
+  title: "A Quiet Collection", // Neutral title, hiding the real name and project name for privacy
+  description: "An archival collection.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+  openGraph: {
+    title: "A Quiet Collection",
+    description: "An archival collection.",
+    type: "website",
+  },
 };
 
 import ArchiveAtmosphere from "@/components/prologue/ArchiveAtmosphere";

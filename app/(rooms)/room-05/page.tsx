@@ -9,7 +9,10 @@ import BraceletObject from "@/components/room-05/BraceletObject";
 import UnclassifiedItem from "@/components/room-05/UnclassifiedItem";
 import RemainTrueStatements from "@/components/room-05/RemainTrueStatements";
 import MissingPage from "@/components/room-05/MissingPage";
-import HiddenArchiveDrawer from "@/components/room-05/HiddenArchiveDrawer";
+import dynamic from "next/dynamic";
+const HiddenArchiveDrawer = dynamic(() => import("@/components/room-05/HiddenArchiveDrawer"), {
+  ssr: false, // it's a hidden interactive element
+});
 
 // A wrapper that handles the staggered fade-out during teardown
 function TeardownWrapper({ children, teardownDelay }: { children: React.ReactNode; teardownDelay: number }) {
