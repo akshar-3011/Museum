@@ -12,14 +12,14 @@ export const ROOM_02_CONTENT = {
   thesis: {
     lineOne: "You didn't remain because I held on.",
     lineTwo: "You remained because you belonged.",
-    lineThree: "A random text. A complaint about the day.",
-    lineFour: "A quiet refusal to just disappear.",
+    lineThree: "Like sunlight in a familiar room",
+    lineFour: "unnoticed most days, missing the moment it's gone.",
   },
   photo01: {
     imagePath: "/image/room-02/room-02_photo-01.jpg",
     alt: "First evidence of return",
     tagText: "A photograph taken without permission.\nA memory kept without regret.",
-    description: "No one told us this picture was clicked. That's what makes it perfect.\nJust you, entirely unbothered, and me, paying attention.",
+    description: "No one told us this picture was clicked. That's what makes it perfect.\nA moment that wasn't posed, a memory that wasn't planned, and somehow everything we were, in one frame.",
   },
 
   // ── Beat 4: The Drawer ──
@@ -92,7 +92,7 @@ export const ROOM_02_CONTENT = {
     ticks: [
       { label: "noticed", fragment: null },
       { label: "noticed again", fragment: null },
-      { label: "still here", fragment: "Same stubbornness, different month." },
+      { label: "still here", fragment: "Same laugh, different month." },
       { label: "still here", fragment: null },
       { label: "still here", fragment: null },
       { label: "still here", fragment: "Tuesday again. Still." },
