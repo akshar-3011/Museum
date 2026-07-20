@@ -9,14 +9,14 @@ export const ROOM_05_CONTENT = {
       id: "exhibit1",
       tag: "Archive Status // Open",
       title: "Everything Explained Except One Thing",
-      copy: "The photos have dates. The messages have timestamps. The memories have context.\nThe shift in baseline happened completely off the record.",
+      copy: "The photos have dates. The messages have timestamps. The memories have context.\nThe feeling somehow arrived without documentation.",
     },
     bracelet: {
       id: "exhibit2",
       tag: "Artifact // 01 // Unfiled",
       title: "Retained Without Classification",
-      description: "I couldn't throw it away. Not because it was valuable, but because throwing it away felt like discarding the Tuesday it came from.",
-      hiddenContext: "It was just a thing. Until you touched it. Then it was a record.",
+      description: "The object itself proved insignificant. The reason it was kept did not.",
+      hiddenContext: "The object was ordinary. The attachment was not.",
     },
     statements: {
       id: "exhibit3",
