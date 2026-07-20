@@ -26,7 +26,7 @@ const specialElite = Special_Elite({
 
 export const metadata: Metadata = {
   title: "A Quiet Collection", // Neutral title, hiding the real name and project name for privacy
-  description: "An archival collection.",
+  description: "An archival collection of things too small to keep anywhere else.",
   robots: {
     index: false,
     follow: false,
