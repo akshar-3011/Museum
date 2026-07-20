@@ -55,7 +55,7 @@ export const ROOM_04_CONTENT = {
       id: "exhibit5",
       title: "Where She Felt Familiar",
       tag: "Attention Log // 05",
-      copy: "The comfort of her presence without needing a reason for it.",
+      copy: "The realization that silence on a call didn't mean someone had to speak.",
       assetType: "photo",
       imagePath: "/image/room-04/room-04_photo-03.jpg",
       gridSpan: "small",
@@ -73,7 +73,7 @@ export const ROOM_04_CONTENT = {
   secretCabinet: {
     label: "UNFILED FRAGMENTS",
     microObservations: [
-      "You never actually answered half the questions I asked, you just sent a related meme.",
+      "The name was Vidhi. The version that stayed was Mango.",
       "You probably forgot half the things you said. I accidentally archived them.",
       "I know exactly which messages I never deleted.",
       "Every playlist eventually developed an anomalous track tied to one subject.",
